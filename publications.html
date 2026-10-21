@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVF6HE75EV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-VVF6HE75EV");
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Publications — Abdul Manaf</title>
+    <meta name="description" content="Peer-reviewed publications and preprints by Abdul Manaf on medical imaging, computer vision, and large language models." />
+    <link rel="icon" href="./assets/images/Manaf.jpg" />
+
+    <script>
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem("theme"); } catch (e) {}
+        if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <nav class="nav" id="nav" aria-label="Primary">
+          <a href="./index.html">About</a>
+          <a href="./publications.html" aria-current="page">Publications</a>
+          <a href="./projects.html">Projects</a>
+          <a href="./experience.html">Experience</a>
+          <a href="./hobbies.html">Hobbies</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-btn" id="theme-toggle" aria-label="Toggle color theme">
+            <svg class="ic i-sun"><use href="#i-sun"/></svg><svg class="ic i-moon"><use href="#i-moon"/></svg>
+          </button>
+          <button class="icon-btn menu-btn" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+            <svg class="ic"><use href="#i-menu"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container">
+          <h1>Publications</h1>
+          <p>Journal articles, conference papers, and preprints on medical imaging, computer vision, and language models. Q1/Q2 refer to journal quartile ranking.</p>
+          <div class="hero-cta">
+            <a class="social" href="https://scholar.google.com/citations?user=hjN9iEgAAAAJ&hl=en" target="_blank" rel="noopener"><svg class="ic"><use href="#i-scholar"/></svg>Google Scholar profile</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tight">
+        <div class="container">
+          <div class="toolbar">
+            <label class="search">
+              <svg class="ic"><use href="#i-search"/></svg>
+              <input type="search" placeholder="Search title, author, venue…" data-search aria-label="Search publications" />
+            </label>
+            <div class="chips-filter" role="group" aria-label="Filter by type">
+              <button class="chip" data-filter="all" aria-pressed="true">All</button>
+              <button class="chip" data-filter="journal" aria-pressed="false">Journal</button>
+              <button class="chip" data-filter="conference" aria-pressed="false">Conference</button>
+              <button class="chip" data-filter="preprint" aria-pressed="false">Preprint</button>
+              <button class="chip" data-filter="first" aria-pressed="false">First author</button>
+            </div>
+            <span class="result-count" data-count></span>
+          </div>
+
+          <div data-filter-list data-noun="publications">
+            <!-- ── Under review ── -->
+            <div class="pub-year-group" data-filter-group>
+              <h2 class="pub-year-label">Under review</h2>
+              <ol class="pubs">
+                <li class="pub" data-filter-item data-cat="journal first review">
+                <span class="logo logo-txt" aria-hidden="true"><svg class="ic"><use href="#i-paper"/></svg></span>
+                <div class="pub-main">
+                  <div class="pub-badges"><span class="badge badge-accent">First author</span><span class="badge">Under review</span></div>
+                  <h3 class="pub-title">EduRAG: An LLM-Powered Retrieval-Augmented Framework for Educational Applications</h3>
+                  <p class="pub-authors"><b>A. Manaf</b>, et al.</p>
+                  <p class="pub-venue">Submitted to Discover Artificial Intelligence (Springer Nature)</p>
+                  <p class="pub-note">Benchmarks GPT, Gemini, LLaMA, Mistral, and DeepSeek RAG pipelines across three university courses. GPT-RAG led on answer relevancy (0.88–0.98); Gemini-RAG on faithfulness (0.72–0.84).</p>
+                  <div class="links">
+                    <a class="lb" href="https://edurag-chatbot.vercel.app" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a>
+                    <a class="lb" href="https://abdulmanaf36.github.io/Student-Chatbot/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a>
+                  </div>
+                </div>
+              </li>
+              </ol>
+            </div>
+
+            <!-- ── 2026 ── -->
+            <div class="pub-year-group" data-filter-group>
+              <h2 class="pub-year-label">2026</h2>
+              <ol class="pubs">
+                <li class="pub" data-filter-item data-cat="journal">
+                <span class="logo"><img src="./assets/images/logos/frontiers.png" alt="Frontiers logo" /></span>
+                <div class="pub-main">
+                  <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-gold">Q1</span></div>
+                  <h3 class="pub-title"><a href="https://doi.org/10.3389/frai.2026.1854873" target="_blank" rel="noopener">Do Language Families Matter? Evaluating LLMs for Sentiment Analysis Through a Hierarchical Cross-Lingual Lens</a></h3>
+                  <p class="pub-authors">M. Kastrati, <b>A. Manaf</b>, A. S. Imran, Z. Kastrati, S. M. Daudpota, M. Biba</p>
+                  <p class="pub-venue">Frontiers in Artificial Intelligence, vol. 9, 1854873</p>
+                  <div class="links">
+                    <a class="lb lb-primary" href="https://doi.org/10.3389/frai.2026.1854873" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a>
+                  </div>
+                </div>
+              </li>
+
+                <li class="pub" data-filter-item data-cat="journal">
+                <span class="logo"><img src="./assets/images/logos/ieee.svg" alt="IEEE logo" /></span>
+                <div class="pub-main">
+                  <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-gold">Q1</span></div>
+                  <h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/11357941" target="_blank" rel="noopener">Exploring the Impact of Self-Supervised Learning and Swin-B Transformer on Saliency Maps and Performance in Multi-Label Chest X-Ray Classification</a></h3>
+                  <p class="pub-authors">T. Ahmed, A. Ahmed, A. S. Imran, M. Ullah, <b>A. Manaf</b>, A. Soylu</p>
+                  <p class="pub-venue">IEEE Access</p>
+                  <p class="pub-note">Work with the ISA Research Group at NTNU. Swin-B with self-supervised pre-training reached AUC 0.83 on multi-label pathology detection.</p>
+                  <div class="links">
+                    <a class="lb lb-primary" href="https://ieeexplore.ieee.org/document/11357941" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a>
+                    <a class="lb" href="https://github.com/abdulmanaf36/Chest-Xray" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a>
+                  </div>
+                </div>
+              </li>
+              </ol>
+            </div>
+
+            <!-- ── 2025 ── -->
+            <div class="pub-year-group" data-filter-group>
+              <h2 class="pub-year-label">2025</h2>
+              <ol class="pubs">
+                <li class="pub" data-filter-item data-cat="journal first">
+                <span class="logo"><img src="./assets/images/logos/ieee.svg" alt="IEEE logo" /></span>
+                <div class="pub-main">
+                  <div class="pub-badges"><span class="badge badge-accent">First author</span><span class="badge">Journal</span><span class="badge badge-gold">Q1</span></div>
+                  <h3 class="pub-title"><a href="https://ieeexplore.ieee.org/document/10891453" target="_blank" rel="noopener">Aerial Image Classification in Post-Flood Scenarios Using Robust Deep Learning and Explainable Artificial Intelligence</a></h3>
+                  <p class="pub-authors"><b>A. Manaf</b>, N. Mughal, K. R. Talpur, B. A. Talpur, G. Mujtaba, S. R. Talpur</p>
+                  <p class="pub-venue">IEEE Access, vol. 13, pp. 35973–35984</p>
+                  <p class="pub-note">MobileNet and Xception reached about 98% accuracy and a 0.92 F1-score on the flood class; LIME explanations for model decisions.</p>
+                  <div class="links">
+                    <a class="lb lb-primary" href="https://ieeexplore.ieee.org/document/10891453" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a>
+                    <a class="lb" href="https://abdulmanaf36.github.io/Post-Flood-Disaster-Management/Classification/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a>
+                    <a class="lb" href="https://github.com/abdulmanaf36/Post-Flood-Disaster-Management" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a>
+                  </div>
+                </div>
+              </li>
+
+                <li class="pub" data-filter-item data-cat="journal">
+                <span class="logo"><img src="./assets/images/logos/acm.svg" alt="ACM logo" /></span>
+                <div class="pub-main">
+                  <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-gold">Q2</span></div>
+                  <h3 class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3748493" target="_blank" rel="noopener">Fake Reviews Detection on E-Commerce Websites Using Novel User Behavioral Features: An Experimental Study</a></h3>
+                  <p class="pub-authors">N. Mughal, G. Mujtaba, M. H. Mughal, <b>A. Manaf</b>, Z. Kamangar</p>
+                  <p class="pub-venue">ACM Transactions on Asian and Low-Resource Language Information Processing</p>
+                  <div class="links">
+                    <a class="lb lb-primary" href="https://dl.acm.org/doi/10.1145/3748493" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a>
+                    <a class="lb" href="https://abdulmanaf36.github.io/Roman-Urdu-fake-review-detection/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a>
+                    <a class="lb" href="https://github.com/abdulmanaf36/Roman-Urdu-fake-review-detection" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a>
+                  </div>
+                </div>
+              </li>
+
+                <li class="pub" data-filter-item data-cat="preprint first">
+                <span class="logo"><img src="./assets/images/logos/arxiv.svg" alt="arXiv logo" /></span>
+                <div class="pub-main">
+                  <div class="pub-badges"><span class="badge badge-accent">First author</span><span class="badge">Preprint</span></div>
+                  <h3 class="pub-title"><a href="https://arxiv.org/abs/2507.09759" target="_blank" rel="noopener">AI-Enhanced Pediatric Pneumonia Detection: A CNN-Based Approach Using Data Augmentation and Generative Adversarial Networks (GANs)</a></h3>
+                  <p class="pub-authors"><b>A. Manaf</b>, N. Mughal</p>
+                  <p class="pub-venue">arXiv:2507.09759</p>
+                  <div class="links">
+                    <a class="lb lb-primary" href="https://arxiv.org/abs/2507.09759" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>arXiv</a>
+                    <a class="lb" href="https://abdulmanaf36.github.io/Pediatric-Chest-Pneumonia-Classification/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a>
+                    <a class="lb" href="https://huggingface.co/spaces/AbdulManafSahito/Pediatric-Chest-Xray-Pneumonia-Classification-System" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a>
+                    <a class="lb" href="https://github.com/abdulmanaf36/Pediatric-Chest-Pneumonia-Classification" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a>
+                  </div>
+                </div>
+              </li>
+              </ol>
+            </div>
+
+            <!-- ── 2024 ── -->
+            <div class="pub-year-group" data-filter-group>
+              <h2 class="pub-year-label">2024</h2>
+              <ol class="pubs">
+                <li class="pub" data-filter-item data-cat="journal">
+                <span class="logo"><img src="./assets/images/logos/elsevier.svg" alt="Elsevier logo" /></span>
+                <div class="pub-main">
+                  <div class="pub-badges"><span class="badge">Journal</span><span class="badge badge-gold">Q1</span></div>
+                  <h3 class="pub-title"><a href="https://doi.org/10.1016/j.bspc.2024.106144" target="_blank" rel="noopener">Enhancing Wrist Abnormality Detection with YOLO: Analysis of State-of-the-Art Single-Stage Detection Models</a></h3>
+                  <p class="pub-authors">A. Ahmed, A. S. Imran, <b>A. Manaf</b>, Z. Kastrati, S. M. Daudpota</p>
+                  <p class="pub-venue">Biomedical Signal Processing and Control (Elsevier), vol. 93, 106144</p>
+                  <p class="pub-note">YOLOv8 on GRAZPEDWRI-DX: 0.95 mAP on fractures, 0.77 mAP overall.</p>
+                  <div class="links">
+                    <a class="lb lb-primary" href="https://doi.org/10.1016/j.bspc.2024.106144" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a>
+                    <a class="lb" href="https://abdulmanaf36.github.io/pediatric_wrist_abnormality_detection-end-to-end-implementation/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a>
+                    <a class="lb" href="https://huggingface.co/spaces/AbdulManafSahito/wrist-anomaly-detection" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a>
+                    <a class="lb" href="https://github.com/abdulmanaf36/Pediatric-Wrist-Abnormality-Detection-System" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a>
+                  </div>
+                </div>
+              </li>
+
+                <li class="pub" data-filter-item data-cat="conference">
+                <span class="logo"><img src="./assets/images/logos/frontiers.png" alt="Frontiers logo" /></span>
+                <div class="pub-main">
+                  <div class="pub-badges"><span class="badge">Conference</span></div>
+                  <h3 class="pub-title"><a href="https://doi.org/10.1109/fit63703.2024.10838409" target="_blank" rel="noopener">Small Data, Big Impact: A Multi-Locale Bone Fracture Detection on an Extremely Limited Dataset via Crack-Informed YOLOv9 Variants</a></h3>
+                  <p class="pub-authors">A. Ahmed, <b>A. Manaf</b>, A. S. Imran, Z. Kastrati, S. M. Daudpota</p>
+                  <p class="pub-venue">International Conference on Frontiers of Information Technology (FIT), pp. 1–6</p>
+                  <div class="links">
+                    <a class="lb lb-primary" href="https://doi.org/10.1109/fit63703.2024.10838409" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a>
+                  </div>
+                </div>
+              </li>
+
+                <li class="pub" data-filter-item data-cat="preprint">
+                <span class="logo"><img src="./assets/images/logos/arxiv.svg" alt="arXiv logo" /></span>
+                <div class="pub-main">
+                  <div class="pub-badges"><span class="badge">Preprint</span></div>
+                  <h3 class="pub-title"><a href="https://arxiv.org/abs/2407.15689" target="_blank" rel="noopener">Pediatric Wrist Fracture Detection in X-Rays via YOLOv10 Algorithm and Dual Label Assignment System</a></h3>
+                  <p class="pub-authors">A. Ahmed, <b>A. Manaf</b></p>
+                  <p class="pub-venue">arXiv:2407.15689</p>
+                  <div class="links">
+                    <a class="lb lb-primary" href="https://arxiv.org/abs/2407.15689" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>arXiv</a>
+                    <a class="lb" href="https://abdulmanaf36.github.io/YOLOv10-Fracture-Detection/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a>
+                    <a class="lb" href="https://github.com/abdulmanaf36/YOLOv10-Fracture-Detection" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a>
+                  </div>
+                </div>
+              </li>
+              </ol>
+            </div>
+
+            <p class="empty" data-empty>No publications match your search.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── THESES ───────────── -->
+      <section class="section">
+        <div class="container two-col">
+          <header class="section-head">
+            <p class="eyebrow">Theses</p>
+            <h2>Degree research</h2>
+          </header>
+
+          <ol class="pubs">
+            <li class="pub">
+                <span class="logo"><img src="./assets/images/logos/sukkur-iba.png" alt="Sukkur IBA University logo" /></span>
+                <div class="pub-main">
+              <div class="pub-badges"><span class="badge">MS Thesis · 2025</span></div>
+              <h3 class="pub-title">A Multimodal Framework to Generate the Lesion Description from ROI-Guided Medical Image Through Vision-Language Model</h3>
+              <p class="pub-venue">Sukkur IBA University · Supervisors: Dr. Ghulam Mujtaba Shaikh, Dr. Sher Muhammad Daudpota</p>
+              <p class="pub-note">ROI-guided pipeline comparing MedFlamingo, MedLLaVA, MedGemma, and Qwen2-VL under full fine-tuning, LoRA, and zero-shot settings on MedTrinity-25M, evaluated with RAGAS.</p>
+            </div>
+              </li>
+            <li class="pub">
+                <span class="logo"><img src="./assets/images/logos/elsevier.svg" alt="Elsevier logo" /></span>
+                <div class="pub-main">
+              <div class="pub-badges"><span class="badge">BS Final Project · 2023</span></div>
+              <h3 class="pub-title">Enhancing Wrist Abnormality Detection with YOLO: Analysis of State-of-the-Art Single-Stage Detection Models</h3>
+              <p class="pub-venue">Sukkur IBA University · Later published in Biomedical Signal Processing and Control</p>
+            </div>
+              </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year">2026</span> Abdul Manaf · Gjøvik, Norway</p>
+        <div class="footer-links">
+          <a href="mailto:abdulmanafsahito@gmail.com" aria-label="Email"><svg class="ic"><use href="#i-mail"/></svg></a>
+          <a href="https://scholar.google.com/citations?user=hjN9iEgAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><svg class="ic"><use href="#i-scholar"/></svg></a>
+          <a href="https://github.com/abdulmanaf36" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a>
+          <a href="https://www.linkedin.com/in/abdulmanaf36" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a>
+          <a href="https://huggingface.co/AbdulManafSahito" target="_blank" rel="noopener" aria-label="Hugging Face"><svg class="ic"><use href="#i-hf"/></svg></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

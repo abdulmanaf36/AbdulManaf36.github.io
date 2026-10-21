@@ -1,625 +1,1228 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVF6HE75EV"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VVF6HE75EV');</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Abdul Manaf — AI Researcher & Engineer. Computer Vision, Medical Imaging, VLMs. PhD Applicant based in Gjøvik, Norway." />
-  <title>Abdul Manaf | AI Researcher</title>
-  <link rel="shortcut icon" href="./assets/images/Manaf.jpg" type="image/x-icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet" />
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --bg:#f8f7f4;--surface:#ffffff;--border:#e4e1d9;--border2:#ccc9c0;
-      --text:#1c1c1a;--muted:#6a6a65;--light:#9a9a94;
-      --accent:#1a4f7a;--accent-lt:#ddeaf5;
-      --gold:#c8a63a;--gold-lt:#fdf4dc;
-      --green:#1c6b42;--green-lt:#d8f0e5;
-      --tag:#f0ede5;--tag-t:#4a4844;
-      --max-w:880px;--sidebar:230px;
-      --serif:'EB Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
-    }
-    html{font-size:16px;scroll-behavior:smooth}
-    body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline;text-underline-offset:3px}
-    img{display:block}
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-VVF6HE75EV"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-VVF6HE75EV");
+    </script>
 
-    /* Nav */
-    .topnav{position:sticky;top:0;z-index:200;background:rgba(248,247,244,0.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-    .topnav-inner{max-width:var(--max-w);margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:50px}
-    .topnav-name{font-family:var(--serif);font-size:1rem;font-weight:500;white-space:nowrap}
-    .topnav-links{display:flex;list-style:none;gap:0.1rem}
-    .topnav-links button{background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:0.78rem;color:var(--muted);padding:0.3rem 0.6rem;border-radius:4px;transition:background .15s,color .15s}
-    .topnav-links button:hover,.topnav-links button.active{background:var(--accent-lt);color:var(--accent)}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abdul Manaf — AI Researcher</title>
+    <meta
+      name="description"
+      content="Abdul Manaf — AI researcher and engineer working on vision-language models, medical imaging, and retrieval-augmented LLM systems. Research Assistant at NTNU, Gjøvik, Norway."
+    />
+    <meta property="og:title" content="Abdul Manaf — AI Researcher" />
+    <meta
+      property="og:description"
+      content="Vision-language models, medical imaging, and retrieval-augmented LLM systems."
+    />
+    <meta property="og:image" content="./assets/images/DP.jpeg" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="./assets/images/Manaf.jpg" />
 
-    /* Pages */
-    .page{display:none}.page.active{display:block}
-    .container{max-width:var(--max-w);margin:0 auto;padding:2.5rem 1.5rem 5rem}
+    <script>
+      (function () {
+        var t = null;
+        try {
+          t = localStorage.getItem("theme");
+        } catch (e) {}
+        if (!t)
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
 
-    /* Utils */
-    .sec-head{font-family:var(--serif);font-size:1.5rem;font-weight:500;padding-bottom:.5rem;border-bottom:1px solid var(--border);margin-bottom:1.5rem}
-    .sec-label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:2rem 0 .9rem}
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    /* ─── ABOUT ─────────────────────────────────── */
-    .hero{display:grid;grid-template-columns:var(--sidebar) 1fr;gap:2.5rem;align-items:start}
-    .hero-sidebar{position:sticky;top:62px}
-    .avatar-wrap{width:150px;height:150px;border-radius:50%;overflow:hidden;border:2px solid var(--border2);margin-bottom:1.1rem}
-    .avatar-wrap img{width:100%;height:100%;object-fit:cover}
-    .hero-name{font-family:var(--serif);font-size:1.4rem;font-weight:500;line-height:1.2;margin-bottom:.25rem}
-    .hero-role{font-size:.78rem;color:var(--muted);line-height:1.5;margin-bottom:1rem}
-    .contact-list{list-style:none;display:flex;flex-direction:column;gap:.42rem;margin-bottom:1rem}
-    .contact-list li{display:flex;align-items:center;gap:.42rem;font-size:.77rem;color:var(--muted)}
-    .contact-list ion-icon{font-size:.88rem;flex-shrink:0}
-    .contact-list a{color:var(--muted)}.contact-list a:hover{color:var(--accent)}
-    .social-row{display:flex;flex-wrap:wrap;gap:.38rem;margin-bottom:1.1rem}
-    .s-pill{display:inline-flex;align-items:center;gap:.26rem;font-size:.72rem;font-weight:500;background:var(--accent-lt);color:var(--accent);border-radius:20px;padding:.23rem .58rem;transition:background .15s}
-    .s-pill:hover{background:#c8daeb;text-decoration:none}
-    .s-pill ion-icon{font-size:.83rem}
-    .badge-strip{display:flex;flex-direction:column;gap:.38rem}
-    .bdg{display:flex;align-items:flex-start;gap:.42rem;font-size:.72rem;padding:.38rem .58rem;border-radius:5px;font-weight:500;line-height:1.35}
-    .bdg.gold{background:var(--gold-lt);color:#7d5a0a}
-    .bdg.blue{background:var(--accent-lt);color:var(--accent)}
-    .bdg.green{background:var(--green-lt);color:var(--green)}
-    .hero-body h1{font-family:var(--serif);font-size:2rem;font-weight:500;line-height:1.2;margin-bottom:.15rem}
-    .h-sub{font-size:.82rem;color:var(--muted);margin-bottom:1.3rem}
-    .about-p{font-size:.91rem;line-height:1.75;color:#2c2b28;margin-bottom:.9rem}
-    .about-p strong{color:var(--text)}
-    .itags{display:flex;flex-wrap:wrap;gap:.33rem;margin:1.2rem 0}
-    .itag{font-size:.72rem;font-weight:500;background:var(--tag);color:var(--tag-t);padding:.23rem .62rem;border-radius:4px;border:1px solid var(--border)}
-    .news-box{border:1px solid var(--border);border-radius:7px;background:var(--surface);margin-top:1.5rem;overflow:hidden}
-    .news-head{padding:.52rem .88rem;background:var(--tag);border-bottom:1px solid var(--border);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
-    .news-list{list-style:none}
-    .news-list li{display:flex;gap:.88rem;align-items:baseline;padding:.58rem .88rem;border-bottom:1px solid var(--border);font-size:.81rem}
-    .news-list li:last-child{border-bottom:none}
-    .ndate{font-size:.71rem;color:var(--muted);white-space:nowrap;min-width:68px;font-weight:500}
-
-    /* ─── PUBLICATIONS ──────────────────────────── */
-    .scholar-btn{display:inline-flex;align-items:center;gap:.43rem;font-size:.8rem;font-weight:500;color:var(--accent);border:1px solid var(--accent);border-radius:5px;padding:.4rem .92rem;margin-bottom:1.75rem;transition:background .15s}
-    .scholar-btn:hover{background:var(--accent-lt);text-decoration:none}
-    .pub-list{list-style:none;display:flex;flex-direction:column;gap:1.2rem}
-    .pub-item{padding:.98rem 1.08rem;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;transition:border-left-color .2s}
-    .pub-item:hover{border-left-color:var(--accent)}
-    .pub-item.review{border-left-color:#ccc}
-    .pub-title{font-family:var(--serif);font-size:.97rem;font-weight:500;line-height:1.4;margin-bottom:.22rem}
-    .pub-title a{color:var(--text)}.pub-title a:hover{color:var(--accent);text-decoration:underline}
-    .pub-authors{font-size:.77rem;color:var(--muted);margin-bottom:.22rem}
-    .pub-authors em{color:var(--text);font-style:italic;font-weight:500}
-    .pub-venue{font-size:.77rem;color:var(--muted);font-style:italic;margin-bottom:.52rem}
-    .pub-venue .vn{color:var(--accent);font-weight:500;font-style:normal}
-    .pub-links{display:flex;gap:.38rem;flex-wrap:wrap}
-    .pub-lnk{font-size:.71rem;font-weight:500;padding:.17rem .52rem;border-radius:3px;background:var(--tag);color:var(--tag-t);border:1px solid var(--border);transition:background .15s}
-    .pub-lnk:hover{background:var(--accent-lt);color:var(--accent);text-decoration:none}
-    .pub-lnk.paper{background:var(--accent-lt);color:var(--accent);border-color:#b0cfe0}
-    .ptag{display:inline-block;font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:.1rem .42rem;border-radius:3px;margin-left:.38rem;vertical-align:middle}
-    .ptag.first{background:var(--gold-lt);color:#7d5a0a}
-    .ptag.collab{background:var(--accent-lt);color:var(--accent)}
-    .ptag.conf{background:var(--green-lt);color:var(--green)}
-    .ptag.rev{background:#f0f0f0;color:#999}
-
-    /* ─── RESUME ────────────────────────────────── */
-    .tl{list-style:none;display:flex;flex-direction:column;gap:0}
-    .tl-item{display:grid;grid-template-columns:96px 1fr;gap:0 1.4rem;padding:1.1rem 0;border-bottom:1px solid var(--border)}
-    .tl-item:last-child{border-bottom:none}
-    .tl-yr{font-size:.74rem;color:var(--muted);font-weight:500;padding-top:.1rem;line-height:1.45}
-    .tl-body h4{font-family:var(--serif);font-size:1rem;font-weight:500;margin-bottom:.14rem}
-    .tl-body .org{font-size:.79rem;color:var(--accent);font-weight:500;margin-bottom:.33rem}
-    .tl-body>p{font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:.28rem}
-    .tl-body ul{list-style:none;display:flex;flex-direction:column;gap:.28rem;margin-top:.38rem}
-    .tl-body ul li{font-size:.8rem;color:var(--muted);line-height:1.55;padding-left:1rem;position:relative}
-    .tl-body ul li::before{content:'–';position:absolute;left:0;color:var(--border2)}
-    .tl-body ul li strong{color:var(--tag-t)}
-    .tl-tags{display:flex;flex-wrap:wrap;gap:.28rem;margin-top:.52rem}
-    .tl-tag{font-size:.69rem;padding:.15rem .48rem;border-radius:3px;background:var(--tag);color:var(--tag-t);border:1px solid var(--border)}
-    .tl-tag.hl{background:var(--accent-lt);color:var(--accent);border-color:#b5d0e6}
-    .tl-tag.gl{background:var(--gold-lt);color:#7d5a0a;border-color:#e8d18a}
-    .tl-tag.gn{background:var(--green-lt);color:var(--green);border-color:#a5d9be}
-    .thesis-card{margin-top:.78rem;padding:.83rem .98rem;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 6px 6px 0}
-    .th-label{font-size:.67rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:.28rem}
-    .thesis-card h5{font-family:var(--serif);font-size:.88rem;font-weight:500;line-height:1.5;margin-bottom:.38rem}
-    .thesis-card p{font-size:.78rem;color:var(--muted);line-height:1.6}
-    .thesis-card .sup{font-size:.75rem;color:var(--muted);margin-top:.42rem}
-    .thesis-card .sup a{font-size:.73rem;color:var(--accent)}
-    .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.35rem}
-    .sg h4{font-size:.71rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:.52rem}
-    .stags{display:flex;flex-wrap:wrap;gap:.28rem}
-    .stag{font-size:.73rem;padding:.2rem .52rem;border-radius:4px;background:var(--surface);border:1px solid var(--border);color:var(--tag-t)}
-    .stag.core{border-color:var(--accent);color:var(--accent);background:var(--accent-lt)}
-    .ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
-    .ref-card{padding:.83rem .98rem;background:var(--surface);border:1px solid var(--border);border-radius:6px}
-    .ref-card strong{font-family:var(--serif);font-size:.9rem;display:block;margin-bottom:.18rem}
-    .ref-card span{color:var(--muted);font-size:.76rem;display:block;margin-bottom:.1rem}
-    .ref-card a{font-size:.74rem;color:var(--accent)}
-
-    /* ─── PROJECTS ──────────────────────────────── */
-    .proj-filters{display:flex;gap:.33rem;flex-wrap:wrap;margin-bottom:1.35rem}
-    .filt{font-size:.75rem;font-weight:500;padding:.26rem .68rem;border:1px solid var(--border);border-radius:20px;background:var(--surface);color:var(--muted);cursor:pointer;transition:all .15s}
-    .filt.active,.filt:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
-    .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:.88rem}
-    .proj-card{background:var(--surface);border:1px solid var(--border);border-radius:7px;overflow:hidden;transition:box-shadow .2s}
-    .proj-card:hover{box-shadow:0 4px 18px rgba(0,0,0,.07)}
-    .proj-card.hidden{display:none}
-    .proj-img{width:100%;height:128px;object-fit:cover}
-    .proj-placeholder{width:100%;height:128px;display:flex;align-items:center;justify-content:center;font-size:1.9rem;background:linear-gradient(135deg,var(--accent-lt),var(--tag))}
-    .proj-body{padding:.83rem}
-    .proj-cat{font-size:.67rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.22rem}
-    .proj-title{font-family:var(--serif);font-size:.92rem;font-weight:500;margin-bottom:.32rem;line-height:1.35}
-    .proj-desc{font-size:.76rem;color:var(--muted);line-height:1.55;margin-bottom:.58rem}
-    .proj-links{display:flex;gap:.33rem;flex-wrap:wrap}
-    .plnk{font-size:.7rem;font-weight:500;padding:.17rem .5rem;border-radius:4px;background:var(--tag);color:var(--tag-t);border:1px solid var(--border);transition:background .15s}
-    .plnk:hover{background:var(--accent-lt);color:var(--accent);text-decoration:none}
-    .plnk.demo{background:var(--accent);color:#fff;border-color:var(--accent)}
-    .plnk.demo:hover{background:#153f63}
-
-    /* ─── ACHIEVEMENTS ──────────────────────────── */
-    .ntnu-block{background:linear-gradient(135deg,#1a4f7a 0%,#2e7db5 100%);color:#fff;border-radius:8px;padding:1.5rem;margin-bottom:2rem}
-    .ntnu-block h3{font-family:var(--serif);font-size:1.15rem;font-weight:500;margin-bottom:.48rem}
-    .ntnu-block p{font-size:.83rem;line-height:1.65;opacity:.93;margin-bottom:.45rem}
-    .ntnu-links{display:flex;gap:.48rem;flex-wrap:wrap;margin-top:.72rem}
-    .ntnu-link{font-size:.75rem;font-weight:500;background:rgba(255,255,255,.92);color:var(--accent);padding:.26rem .68rem;border-radius:4px;transition:background .15s}
-    .ntnu-link:hover{background:#fff;text-decoration:none}
-    .ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:.83rem}
-    .ach-card{padding:.98rem 1.08rem;border-radius:7px;border:1px solid var(--border);background:var(--surface)}
-    .ach-card.gold{border-left:3px solid var(--gold)}
-    .ach-card.blue{border-left:3px solid var(--accent)}
-    .ach-card.green{border-left:3px solid var(--green)}
-    .ach-icon{font-size:1.45rem;margin-bottom:.38rem}
-    .ach-title{font-family:var(--serif);font-size:.93rem;font-weight:500;margin-bottom:.18rem}
-    .ach-desc{font-size:.78rem;color:var(--muted);line-height:1.55}
-    .ach-desc a{font-size:.74rem}
-
-    /* ─── CERTIFICATES ──────────────────────────── */
-    .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:.83rem}
-    .cert-card{background:var(--surface);border:1px solid var(--border);border-radius:7px;overflow:hidden;transition:box-shadow .2s;text-decoration:none;color:var(--text);display:flex;flex-direction:column}
-    .cert-card:hover{box-shadow:0 3px 14px rgba(0,0,0,.07);text-decoration:none}
-    .cert-img{width:100%;height:108px;object-fit:cover;background:var(--tag)}
-    .cert-body{padding:.68rem .83rem;flex:1}
-    .cert-cat{font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.18rem}
-    .cert-title{font-size:.83rem;font-weight:500;line-height:1.35;margin-bottom:.22rem}
-    .cert-meta{font-size:.73rem;color:var(--light)}
-
-    /* Footer */
-    footer{border-top:1px solid var(--border);padding:1.2rem 1.5rem;text-align:center;font-size:.75rem;color:var(--muted)}
-
-    /* Mobile */
-    @media(max-width:680px){
-      .hero{grid-template-columns:1fr}
-      .hero-sidebar{position:static;display:flex;flex-direction:column;align-items:center;text-align:center}
-      .social-row{justify-content:center}.badge-strip{align-items:center}
-      .skills-grid,.ref-grid,.proj-grid,.ach-grid,.cert-grid{grid-template-columns:1fr}
-      .tl-item{grid-template-columns:68px 1fr;gap:0 .88rem}
-      .topnav-name{display:none}
-    }
-    @media(max-width:420px){
-      .container{padding:1.5rem 1rem 4rem}
-      .topnav-links button{padding:.25rem .38rem;font-size:.73rem}
-    }
-  </style>
-</head>
-<body>
-
-<!-- ── Top Nav ──────────────────────────────────────────── -->
-<nav class="topnav">
-  <div class="topnav-inner">
-    <span class="topnav-name">Abdul Manaf</span>
-    <ul class="topnav-links">
-      <li><button class="active" onclick="showPage('about',this)">About</button></li>
-      <li><button onclick="showPage('publications',this)">Publications</button></li>
-      <li><button onclick="showPage('resume',this)">Resume</button></li>
-      <li><button onclick="showPage('projects',this)">Projects</button></li>
-      <li><button onclick="showPage('achievements',this)">Achievements</button></li>
-      <li><button onclick="showPage('certificates',this)">Certificates</button></li>
-    </ul>
-  </div>
-</nav>
-
-
-<!-- ═══════════ ABOUT ════════════════════════════════════ -->
-<div class="page active" id="page-about"><div class="container">
-<div class="hero">
-  <aside class="hero-sidebar">
-    <div class="avatar-wrap"><img src="./assets/images/DP.jpeg" alt="Abdul Manaf" /></div>
-    <div class="hero-name">Abdul Manaf</div>
-    <div class="hero-role">AI Researcher · Computer Vision<br>PhD Applicant · Gjøvik, Norway</div>
-    <ul class="contact-list">
-      <li><ion-icon name="globe-outline"></ion-icon><a href="https://abdulmanaf.me" target="_blank">abdulmanaf.me</a></li>
-      <li><ion-icon name="mail-outline"></ion-icon><a href="mailto:abdulmanafsahito@gmail.com">abdulmanafsahito@gmail.com</a></li>
-      <li><ion-icon name="phone-portrait-outline"></ion-icon><span>+47 465 89 149</span></li>
-      <li><ion-icon name="location-outline"></ion-icon><span>Gjøvik, Norway</span></li>
-      <li><ion-icon name="school-outline"></ion-icon><a href="https://scholar.google.com/citations?user=hjN9iEgAAAAJ&hl=en" target="_blank">Google Scholar</a></li>
-    </ul>
-    <div class="social-row">
-      <a href="https://www.linkedin.com/in/AbdulManafSahito/" target="_blank" class="s-pill"><ion-icon name="logo-linkedin"></ion-icon>LinkedIn</a>
-      <a href="https://github.com/abdulmanafsahito" target="_blank" class="s-pill"><ion-icon name="logo-github"></ion-icon>GitHub</a>
-      <a href="https://scholar.google.com/citations?user=hjN9iEgAAAAJ&hl=en" target="_blank" class="s-pill"><ion-icon name="school-outline"></ion-icon>Scholar</a>
-      <a href="https://leetcode.com/u/AbdulManaf/" target="_blank" class="s-pill"><ion-icon name="bar-chart-outline"></ion-icon>LeetCode</a>
-      <a href="https://www.hackerrank.com/profile/Ethan_Hunt12" target="_blank" class="s-pill"><ion-icon name="terminal-outline"></ion-icon>HackerRank</a>
-    </div>
-    <div class="badge-strip">
-      <div class="bdg gold">🏆 #1 MS CS Batch · IBA Sukkur</div>
-      <div class="bdg blue">🇳🇴 NTNU NORPART-CONNECT Fellow</div>
-      <div class="bdg green">🎓 MS Defended · Feb 2026</div>
-    </div>
-  </aside>
-
-  <div class="hero-body">
-    <h1>Abdul Manaf</h1>
-    <div class="h-sub">AI Researcher &amp; Engineer &nbsp;·&nbsp; PhD Applicant &nbsp;·&nbsp; Gjøvik, Norway</div>
-    <p class="about-p">I'm an AI researcher and engineer specializing in <strong>computer vision, medical imaging</strong>, and <strong>Vision-Language Models (VLMs)</strong>. I recently completed my <strong>MS in Computer Science</strong> at Sukkur IBA University (GPA 3.43/4.00), where I ranked <strong>#1 in my MS cohort</strong> and was awarded the <strong>PM's Youth Laptop Scheme 2025</strong>.</p>
-    <p class="about-p">My MS thesis developed a <strong>ROI-guided multimodal framework</strong> for automated lesion description generation, benchmarking MedFlamingo, MedLLaVA, MedGemma, and Qwen2-VL across fine-tuning strategies. I completed a <strong>fully-funded 6-month research exchange at NTNU, Norway</strong> (Jan–May 2025) under the NORPART-CONNECT project with the ISA Research Group under Dr. Ali Shariq Imran — co-authoring an IEEE paper on Swin-B Transformer CXR classification and developing <strong>EduRAG</strong>, a RAG chatbot under review at <em>Discover Artificial Intelligence</em> (Springer).</p>
-    <p class="about-p">I am actively seeking <strong>PhD positions</strong> in AI, computer vision, or multimodal learning across Europe and beyond. If you're a researcher or supervisor in these areas, I'd love to connect.</p>
-    <div class="itags">
-      <span class="itag">Computer Vision</span><span class="itag">Medical Imaging</span><span class="itag">Vision-Language Models</span>
-      <span class="itag">Multimodal Learning</span><span class="itag">RAG Systems</span><span class="itag">Explainable AI</span>
-      <span class="itag">Semantic Segmentation</span><span class="itag">Object Detection</span><span class="itag">LLM Benchmarking</span>
-    </div>
-    <div class="news-box">
-      <div class="news-head">Recent News</div>
-      <ul class="news-list">
-        <li><span class="ndate">Mar 2026</span><span>Working on multilingual LLM benchmark — 5 LLMs across 36 languages with hierarchical language-family analysis.</span></li>
-        <li><span class="ndate">Feb 2026</span><span>Successfully defended MS thesis on ROI-guided multimodal medical VLMs. 🎓</span></li>
-        <li><span class="ndate">Feb 2026</span><span>Swin-B Transformer chest X-ray classification paper accepted in <em>IEEE</em> (NTNU collaboration). AUC 0.83.</span></li>
-        <li><span class="ndate">2025</span><span>Selected as <strong>#1 MS CS graduate</strong> for PM's Youth Laptop Scheme 2025.</span></li>
-        <li><span class="ndate">Jan–May 2025</span><span>Completed 6-month NORPART-CONNECT research fellowship at <strong>NTNU, Gjøvik, Norway</strong>.</span></li>
-        <li><span class="ndate">2025</span><span>EduRAG submitted to <em>Discover Artificial Intelligence</em> (Springer) — under review. GPT-RAG: 0.98 answer relevancy.</span></li>
-        <li><span class="ndate">2025</span><span>IEEE Access paper published — aerial flood classification using deep learning &amp; XAI, 98% accuracy.</span></li>
-      </ul>
-    </div>
-  </div>
-</div>
-</div></div>
-
-
-<!-- ═══════════ PUBLICATIONS ═════════════════════════════ -->
-<div class="page" id="page-publications"><div class="container">
-  <h2 class="sec-head">Publications</h2>
-  <a href="https://scholar.google.com/citations?user=hjN9iEgAAAAJ&hl=en" target="_blank" class="scholar-btn"><ion-icon name="school-outline"></ion-icon> View full profile on Google Scholar</a>
-
-  <div class="sec-label">Journal Articles</div>
-  <ul class="pub-list">
-    <li class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/11357941/" target="_blank">Exploring the Impact of Self-Supervised Learning and Swin-B Transformer on Saliency Maps and Performance in Multi-Label Chest X-Ray Classification</a><span class="ptag collab">NTNU Collab</span></div>
-      <div class="pub-authors">Ahmed, A., Imran, A.S., <em>Manaf, A.</em>, Kastrati, Z., &amp; Daudpota, S.M.</div>
-      <div class="pub-venue">Published in <span class="vn">IEEE</span>, 2025 &nbsp;·&nbsp; AUC 0.83 · IoU 0.16 &nbsp;·&nbsp; ISA Research Group, NTNU</div>
-      <div class="pub-links"><a href="https://ieeexplore.ieee.org/document/11357941/" target="_blank" class="pub-lnk paper">Paper</a><a href="https://github.com/abdulmanafsahito/Chest-Xray" target="_blank" class="pub-lnk">Code</a></div>
-    </li>
-    <li class="pub-item">
-      <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/10891453" target="_blank">Aerial Image Classification in Post-Flood Scenarios Using Robust Deep Learning and Explainable Artificial Intelligence</a><span class="ptag first">First Author</span></div>
-      <div class="pub-authors"><em>Manaf, A.</em>, Mughal, N., Talpur, K.R., Talpur, B.A., Mujtaba, G., &amp; Talpur, S.R.</div>
-      <div class="pub-venue">Published in <span class="vn">IEEE Access</span>, 2025, vol. 13, pp. 35973–35984 &nbsp;·&nbsp; 98% accuracy · 92% F1-score</div>
-      <div class="pub-links"><a href="https://ieeexplore.ieee.org/document/10891453" target="_blank" class="pub-lnk paper">Paper</a><a href="https://abdulmanaf.me/Post-Flood-Disaster-Management/Classification/" target="_blank" class="pub-lnk">Project Page</a><a href="https://github.com/AbdulManafSahito/Post-Flood-Disaster-Management" target="_blank" class="pub-lnk">Code</a></div>
-    </li>
-    <li class="pub-item">
-      <div class="pub-title"><a href="https://doi.org/10.1016/j.bspc.2024.106144" target="_blank">Enhancing Wrist Abnormality Detection with YOLO: Analysis of State-of-the-Art Single-Stage Detection Models</a><span class="ptag collab">Co-Author</span></div>
-      <div class="pub-authors">Ahmed, A., Imran, A.S., <em>Manaf, A.</em>, Kastrati, Z., &amp; Daudpota, S.M.</div>
-      <div class="pub-venue">Published in <span class="vn">Biomedical Signal Processing and Control (Elsevier)</span>, 2024, vol. 93, 106144 &nbsp;·&nbsp; mAP 0.95 · Sensitivity 0.92</div>
-      <div class="pub-links"><a href="https://doi.org/10.1016/j.bspc.2024.106144" target="_blank" class="pub-lnk paper">Paper</a><a href="https://huggingface.co/spaces/AbdulManafSahito/wrist-anomaly-detection" target="_blank" class="pub-lnk">Demo</a></div>
-    </li>
-    <li class="pub-item">
-      <div class="pub-title"><a href="https://dl.acm.org/doi/10.1145/3748493" target="_blank">Fake Reviews Detection on E-Commerce Websites Using Novel User Behavioral Features: An Experimental Study</a></div>
-      <div class="pub-authors">Mughal, N., Mujtaba, G., Mughal, M.H., <em>Manaf, A.</em>, &amp; Kamangar, Z.</div>
-      <div class="pub-venue">Published in <span class="vn">ACM Transactions on Asian and Low-Resource Language Information Processing</span>, 2025</div>
-      <div class="pub-links"><a href="https://dl.acm.org/doi/10.1145/3748493" target="_blank" class="pub-lnk paper">Paper</a><a href="https://github.com/AbdulManafSahito/Roman-Urdu-fake-review-detection" target="_blank" class="pub-lnk">Code</a></div>
-    </li>
-  </ul>
-
-  <div class="sec-label">Conference Papers</div>
-  <ul class="pub-list">
-    <li class="pub-item">
-      <div class="pub-title"><a href="https://doi.org/10.1109/fit63703.2024.10838409" target="_blank">Small Data, Big Impact: A Multi-Locale Bone Fracture Detection on an Extremely Limited Dataset via Crack-Informed YOLOv9 Variants</a><span class="ptag conf">Conference</span></div>
-      <div class="pub-authors">Ahmed, A., <em>Manaf, A.</em>, Imran, A.S., Kastrati, Z., &amp; Daudpota, S.M.</div>
-      <div class="pub-venue">Published in <span class="vn">2024 International Conference on Frontiers of Information Technology (FIT)</span>, pp. 1–6</div>
-      <div class="pub-links"><a href="https://doi.org/10.1109/fit63703.2024.10838409" target="_blank" class="pub-lnk paper">Paper</a></div>
-    </li>
-  </ul>
-
-  <div class="sec-label">Under Review / In Progress</div>
-  <ul class="pub-list">
-    <li class="pub-item review">
-      <div class="pub-title">EduRAG: An LLM-Powered Retrieval-Augmented Framework for Educational Applications<span class="ptag rev">Under Review</span></div>
-      <div class="pub-authors"><em>Manaf, A.</em>, et al. &nbsp;·&nbsp; GPT-RAG: 0.98 answer relevancy · Mistral-RAG: 0.65–0.88 context precision</div>
-      <div class="pub-venue">Submitted to <span class="vn">Discover Artificial Intelligence</span> (Springer)</div>
-      <div class="pub-links"><a href="https://edurag-chatbot.vercel.app" target="_blank" class="pub-lnk">Live Demo</a></div>
-    </li>
-    <li class="pub-item review">
-      <div class="pub-title">Multilingual LLM Benchmark: Evaluating 5 LLMs Across 36 Languages with Hierarchical Language-Family Analysis<span class="ptag rev">In Progress</span></div>
-      <div class="pub-authors"><em>Manaf, A.</em>, et al.</div>
-      <div class="pub-venue">Manuscript in preparation, 2026</div>
-    </li>
-  </ul>
-</div></div>
-
-
-<!-- ═══════════ RESUME ════════════════════════════════════ -->
-<div class="page" id="page-resume"><div class="container">
-  <h2 class="sec-head">Resume</h2>
-
-  <div class="sec-label">Education</div>
-  <ul class="tl">
-    <li class="tl-item">
-      <div class="tl-yr">Jan 2024 –<br>Dec 2025</div>
-      <div class="tl-body">
-        <h4>Master of Science in Computer Science</h4>
-        <div class="org">Sukkur IBA University, Pakistan</div>
-        <p>GPA: 3.43 / 4.00 &nbsp;·&nbsp; Defended: February 2026</p>
-        <div class="tl-tags">
-          <span class="tl-tag gl">🏆 Ranked #1 in MS Cohort</span>
-          <span class="tl-tag gl">PM's Youth Laptop Scheme 2025</span>
-          <span class="tl-tag hl">NORPART-CONNECT Fellow — NTNU</span>
+    <header class="site-header">
+      <div class="container header-inner">
+        <nav class="nav" id="nav" aria-label="Primary">
+          <a href="./index.html" aria-current="page">About</a>
+          <a href="./publications.html">Publications</a>
+          <a href="./projects.html">Projects</a>
+          <a href="./experience.html">Experience</a>
+          <a href="./hobbies.html">Hobbies</a>
+        </nav>
+        <div class="header-actions">
+          <button
+            class="icon-btn"
+            id="theme-toggle"
+            aria-label="Toggle color theme"
+          >
+            <svg class="ic i-sun"><use href="#i-sun" /></svg
+            ><svg class="ic i-moon"><use href="#i-moon" /></svg>
+          </button>
+          <button
+            class="icon-btn menu-btn"
+            id="menu-toggle"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="nav"
+          >
+            <svg class="ic"><use href="#i-menu" /></svg>
+          </button>
         </div>
-        <div class="thesis-card">
-          <div class="th-label">Master's Thesis</div>
-          <h5>"A Multimodal Framework for Generating Lesion Descriptions from ROI-Guided Medical Images Using Vision-Language Models"</h5>
-          <p>ROI-guided multimodal pipeline comparing MedFlamingo, MedLLaVA, MedGemma, and Qwen2-VL across full fine-tuning, LoRA, and zero-shot strategies on MedTrinity-25M (RAGAS metrics). Uncovered architecture-dependent ROI effects and a semantic similarity–factual correctness gap in medical AI.</p>
-          <div class="sup">Supervisor: Dr. Ghulam Mujtaba Shaikh &nbsp;·&nbsp; Co-Supervisor: Dr. Sher Muhammad Daudpota &nbsp;·&nbsp; <a href="https://github.com/abdulmanafsahito/Thesis-Work" target="_blank">Code ↗</a></div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ───────────── HERO ───────────── -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <!-- <p class="status"><span class="dot" aria-hidden="true"></span>Open to PhD positions in Europe &amp; North America</p> -->
+            <h1 class="hero-name">Abdul Manaf</h1>
+            <p class="hero-role">
+              AI Researcher &amp; Engineer · Computer Vision, VLMs &amp; LLM
+              Systems
+            </p>
+            <p class="hero-lead">
+              I'm a <strong>Research Assistant at NTNU</strong> in Gjøvik,
+              Norway. My research centres on vision-language models for medical
+              imaging, with a focus on grounding, factual reliability, and
+              clinical usefulness. I also build retrieval-augmented and agentic
+              LLM systems and take them through to deployment.
+            </p>
+
+            <div class="hero-cta">
+              <a
+                class="btn btn-primary"
+                href="mailto:abdulmanafsahito@gmail.com"
+                ><svg class="ic"><use href="#i-mail" /></svg>Email me</a
+              >
+            </div>
+
+            <div class="socials" aria-label="Profiles">
+              <a
+                class="social"
+                href="https://scholar.google.com/citations?user=hjN9iEgAAAAJ&hl=en"
+                target="_blank"
+                rel="noopener"
+                ><svg class="ic"><use href="#i-scholar" /></svg>Google
+                Scholar</a
+              >
+              <a
+                class="social"
+                href="https://github.com/abdulmanaf36"
+                target="_blank"
+                rel="noopener"
+                ><svg class="ic"><use href="#i-github" /></svg>GitHub</a
+              >
+              <a
+                class="social"
+                href="https://www.linkedin.com/in/abdulmanaf36"
+                target="_blank"
+                rel="noopener"
+                ><svg class="ic"><use href="#i-linkedin" /></svg>LinkedIn</a
+              >
+              <a
+                class="social"
+                href="https://huggingface.co/AbdulManafSahito"
+                target="_blank"
+                rel="noopener"
+                ><svg class="ic"><use href="#i-hf" /></svg>Hugging Face</a
+              >
+            </div>
+          </div>
+
+          <figure class="hero-photo">
+            <img
+              src="./assets/images/DP.jpeg"
+              alt="Abdul Manaf in the Norwegian mountains above a fjord"
+              width="1024"
+              height="768"
+            />
+          </figure>
         </div>
-        <p style="margin-top:.58rem;font-size:.78rem;color:var(--muted)"><strong style="color:var(--tag-t)">Key Coursework:</strong> Advanced Machine Learning · Advanced NLP · Computer Vision · Research Methodology · Analysis of Algorithms · Advanced Cyber Security</p>
+
+        <div class="container">
+          <dl class="stats">
+            <div>
+              <dt>Publications</dt>
+              <dd>8</dd>
+            </div>
+            <div>
+              <dt>Q1 journal articles</dt>
+              <dd>4</dd>
+            </div>
+            <div>
+              <dt>Scholar citations</dt>
+              <dd>140+</dd>
+            </div>
+            <div>
+              <dt>Current affiliation</dt>
+              <dd>NTNU</dd>
+            </div>
+          </dl>
+          <div class="orgs">
+            <div class="orgs-group">
+              <p class="eyebrow">Affiliations</p>
+              <div class="orgs-list">
+                <a
+                  class="org"
+                  href="https://www.ntnu.edu/"
+                  target="_blank"
+                  rel="noopener"
+                  ><span class="logo"
+                    ><img src="./assets/images/logos/ntnu.svg" alt="" /></span
+                  ><span
+                    ><strong>NTNU</strong
+                    ><small>Research Assistant</small></span
+                  ></a
+                >
+                <a
+                  class="org"
+                  href="https://www.iba-suk.edu.pk/"
+                  target="_blank"
+                  rel="noopener"
+                  ><span class="logo"
+                    ><img
+                      src="./assets/images/logos/sukkur-iba.png"
+                      alt="" /></span
+                  ><span
+                    ><strong>Sukkur IBA University</strong
+                    ><small>MS &amp; BS Computer Science</small></span
+                  ></a
+                >
+              </div>
+            </div>
+            <div class="orgs-group">
+              <p class="eyebrow">Published in</p>
+              <div class="orgs-list">
+                <a
+                  class="org"
+                  href="https://ieeexplore.ieee.org/document/10891453"
+                  target="_blank"
+                  rel="noopener"
+                  ><span class="logo"
+                    ><img src="./assets/images/logos/ieee.svg" alt="" /></span
+                  ><span
+                    ><strong>IEEE</strong><small>Access · FIT</small></span
+                  ></a
+                >
+                <a
+                  class="org"
+                  href="https://doi.org/10.1016/j.bspc.2024.106144"
+                  target="_blank"
+                  rel="noopener"
+                  ><span class="logo"
+                    ><img
+                      src="./assets/images/logos/elsevier.svg"
+                      alt="" /></span
+                  ><span><strong>Elsevier</strong><small>BSPC</small></span></a
+                >
+                <a
+                  class="org"
+                  href="https://doi.org/10.3389/frai.2026.1854873"
+                  target="_blank"
+                  rel="noopener"
+                  ><span class="logo"
+                    ><img
+                      src="./assets/images/logos/frontiers.png"
+                      alt="" /></span
+                  ><span
+                    ><strong>Frontiers</strong><small>in AI</small></span
+                  ></a
+                >
+                <a
+                  class="org"
+                  href="https://dl.acm.org/doi/10.1145/3748493"
+                  target="_blank"
+                  rel="noopener"
+                  ><span class="logo"
+                    ><img src="./assets/images/logos/acm.svg" alt="" /></span
+                  ><span><strong>ACM</strong><small>TALLIP</small></span></a
+                >
+                <a
+                  class="org"
+                  href="https://arxiv.org/abs/2507.09759"
+                  target="_blank"
+                  rel="noopener"
+                  ><span class="logo"
+                    ><img src="./assets/images/logos/arxiv.svg" alt="" /></span
+                  ><span
+                    ><strong>arXiv</strong><small>Preprints</small></span
+                  ></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── RESEARCH ───────────── -->
+      <section class="section">
+        <div class="container two-col">
+          <header class="section-head">
+            <p class="eyebrow">Research</p>
+            <h2>What I work on</h2>
+          </header>
+
+          <div>
+            <p class="prose">
+              My MS thesis introduced an ROI-guided multimodal pipeline for
+              generating lesion descriptions from medical images. It benchmarked
+              MedFlamingo, MedLLaVA, MedGemma, and Qwen2-VL under full
+              fine-tuning, LoRA, and zero-shot settings. The study found
+              architecture-dependent effects of region guidance and a consistent
+              gap between semantic similarity and factual correctness, which
+              standard metrics often hide.
+            </p>
+            <p class="prose">
+              Earlier work spans fracture detection in pediatric radiographs,
+              self-supervised transformers for chest X-rays, explainable
+              aerial-image analysis for flood response, and cross-lingual
+              evaluation of LLMs.
+            </p>
+
+            <ul class="interests">
+              <li>
+                <h3>Vision-language models for medicine</h3>
+                <p>
+                  Region-grounded report and lesion description generation;
+                  parameter-efficient adaptation of medical VLMs.
+                </p>
+              </li>
+              <li>
+                <h3>Trustworthy &amp; explainable AI</h3>
+                <p>
+                  Measuring factual correctness beyond surface similarity;
+                  saliency and LIME-based explanations.
+                </p>
+              </li>
+              <li>
+                <h3>RAG &amp; agentic LLM systems</h3>
+                <p>
+                  Domain-grounded retrieval pipelines, multi-agent workflows,
+                  and evaluation of faithfulness and relevance.
+                </p>
+              </li>
+              <li>
+                <h3>Detection in clinical imaging</h3>
+                <p>
+                  YOLO-family detectors and CNN/transformer classifiers for
+                  radiograph abnormality detection.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── SKILLS ───────────── -->
+      <section class="section">
+        <div class="container">
+          <header class="row-head">
+            <div>
+              <p class="eyebrow">Skills</p>
+              <h2>Tools &amp; techniques</h2>
+            </div>
+            <a class="head-link" href="./experience.html#skills"
+              >Full skill list<svg class="ic"><use href="#i-arrow" /></svg
+            ></a>
+          </header>
+          <!-- Brand icons from Simple Icons (CC0) -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            style="display: none"
+            aria-hidden="true"
+          >
+            <symbol id="b-python" viewBox="0 0 24 24">
+              <path
+                d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"
+              />
+            </symbol>
+            <symbol id="b-pytorch" viewBox="0 0 24 24">
+              <path
+                d="M12.005 0L4.952 7.053a9.865 9.865 0 000 14.022 9.866 9.866 0 0014.022 0c3.984-3.9 3.986-10.205.085-14.023l-1.744 1.743c2.904 2.905 2.904 7.634 0 10.538s-7.634 2.904-10.538 0-2.904-7.634 0-10.538l4.647-4.646.582-.665zm3.568 3.899a1.327 1.327 0 00-1.327 1.327 1.327 1.327 0 001.327 1.328A1.327 1.327 0 0016.9 5.226 1.327 1.327 0 0015.573 3.9z"
+              />
+            </symbol>
+            <symbol id="b-huggingface" viewBox="0 0 24 24">
+              <path
+                d="M12.025 1.13c-5.77 0-10.449 4.647-10.449 10.378 0 1.112.178 2.181.503 3.185.064-.222.203-.444.416-.577a.96.96 0 0 1 .524-.15c.293 0 .584.124.84.284.278.173.48.408.71.694.226.282.458.611.684.951v-.014c.017-.324.106-.622.264-.874s.403-.487.762-.543c.3-.047.596.06.787.203s.31.313.4.467c.15.257.212.468.233.542.01.026.653 1.552 1.657 2.54.616.605 1.01 1.223 1.082 1.912.055.537-.096 1.059-.38 1.572.637.121 1.294.187 1.967.187.657 0 1.298-.063 1.921-.178-.287-.517-.44-1.041-.384-1.581.07-.69.465-1.307 1.081-1.913 1.004-.987 1.647-2.513 1.657-2.539.021-.074.083-.285.233-.542.09-.154.208-.323.4-.467a1.08 1.08 0 0 1 .787-.203c.359.056.604.29.762.543s.247.55.265.874v.015c.225-.34.457-.67.683-.952.23-.286.432-.52.71-.694.257-.16.547-.284.84-.285a.97.97 0 0 1 .524.151c.228.143.373.388.43.625l.006.04a10.3 10.3 0 0 0 .534-3.273c0-5.731-4.678-10.378-10.449-10.378M8.327 6.583a1.5 1.5 0 0 1 .713.174 1.487 1.487 0 0 1 .617 2.013c-.183.343-.762-.214-1.102-.094-.38.134-.532.914-.917.71a1.487 1.487 0 0 1 .69-2.803m7.486 0a1.487 1.487 0 0 1 .689 2.803c-.385.204-.536-.576-.916-.71-.34-.12-.92.437-1.103.094a1.487 1.487 0 0 1 .617-2.013 1.5 1.5 0 0 1 .713-.174m-10.68 1.55a.96.96 0 1 1 0 1.921.96.96 0 0 1 0-1.92m13.838 0a.96.96 0 1 1 0 1.92.96.96 0 0 1 0-1.92M8.489 11.458c.588.01 1.965 1.157 3.572 1.164 1.607-.007 2.984-1.155 3.572-1.164.196-.003.305.12.305.454 0 .886-.424 2.328-1.563 3.202-.22-.756-1.396-1.366-1.63-1.32q-.011.001-.02.006l-.044.026-.01.008-.03.024q-.018.017-.035.036l-.032.04a1 1 0 0 0-.058.09l-.014.025q-.049.088-.11.19a1 1 0 0 1-.083.116 1.2 1.2 0 0 1-.173.18q-.035.029-.075.058a1.3 1.3 0 0 1-.251-.243 1 1 0 0 1-.076-.107c-.124-.193-.177-.363-.337-.444-.034-.016-.104-.008-.2.022q-.094.03-.216.087-.06.028-.125.063l-.13.074q-.067.04-.136.086a3 3 0 0 0-.135.096 3 3 0 0 0-.26.219 2 2 0 0 0-.12.121 2 2 0 0 0-.106.128l-.002.002a2 2 0 0 0-.09.132l-.001.001a1.2 1.2 0 0 0-.105.212q-.013.036-.024.073c-1.139-.875-1.563-2.317-1.563-3.203 0-.334.109-.457.305-.454m.836 10.354c.824-1.19.766-2.082-.365-3.194-1.13-1.112-1.789-2.738-1.789-2.738s-.246-.945-.806-.858-.97 1.499.202 2.362c1.173.864-.233 1.45-.685.64-.45-.812-1.683-2.896-2.322-3.295s-1.089-.175-.938.647 2.822 2.813 2.562 3.244-1.176-.506-1.176-.506-2.866-2.567-3.49-1.898.473 1.23 2.037 2.16c1.564.932 1.686 1.178 1.464 1.53s-3.675-2.511-4-1.297c-.323 1.214 3.524 1.567 3.287 2.405-.238.839-2.71-1.587-3.216-.642-.506.946 3.49 2.056 3.522 2.064 1.29.33 4.568 1.028 5.713-.624m5.349 0c-.824-1.19-.766-2.082.365-3.194 1.13-1.112 1.789-2.738 1.789-2.738s.246-.945.806-.858.97 1.499-.202 2.362c-1.173.864.233 1.45.685.64.451-.812 1.683-2.896 2.322-3.295s1.089-.175.938.647-2.822 2.813-2.562 3.244 1.176-.506 1.176-.506 2.866-2.567 3.49-1.898-.473 1.23-2.037 2.16c-1.564.932-1.686 1.178-1.464 1.53s3.675-2.511 4-1.297c.323 1.214-3.524 1.567-3.287 2.405.238.839 2.71-1.587 3.216-.642.506.946-3.49 2.056-3.522 2.064-1.29.33-4.568 1.028-5.713-.624"
+              />
+            </symbol>
+            <symbol id="b-ultralytics" viewBox="0 0 24 24">
+              <path
+                d="m12.736 7.341-.002 2.897c.012 3.953-3.188 7.177-7.098 7.171-1.553-.003-2.967-.48-4.112-1.313 2.056 3.725 5.999 6.24 10.48 6.245 6.511-.003 11.891-5.343 11.992-11.91l-.002-.027c.006-.151 0-2.951.006-3.075-.01-3.116-2.538-5.677-5.63-5.67-3.105-.006-5.645 2.54-5.634 5.683zM5.629 4.573C2.525 4.573 0 7.118 0 10.246s2.525 5.673 5.63 5.673c3.103 0 5.629-2.545 5.629-5.673s-2.526-5.673-5.63-5.673"
+              />
+            </symbol>
+            <symbol id="b-openai" viewBox="0 0 24 24">
+              <path
+                d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"
+              />
+            </symbol>
+            <symbol id="b-googlegemini" viewBox="0 0 24 24">
+              <path
+                d="M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81"
+              />
+            </symbol>
+            <symbol id="b-meta" viewBox="0 0 24 24">
+              <path
+                d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"
+              />
+            </symbol>
+            <symbol id="b-mistralai" viewBox="0 0 24 24">
+              <path
+                d="M17.143 3.429v3.428h-3.429v3.429h-3.428V6.857H6.857V3.43H3.43v13.714H0v3.428h10.286v-3.428H6.857v-3.429h3.429v3.429h3.429v-3.429h3.428v3.429h-3.428v3.428H24v-3.428h-3.43V3.429z"
+              />
+            </symbol>
+            <symbol id="b-langchain" viewBox="0 0 24 24">
+              <path
+                d="M13.796 0a6.93 6.93 0 0 0-4.91 2.019L5.451 5.455l3.273 3.27 3.432-3.432a2.284 2.284 0 0 1 3.277 0 2.28 2.28 0 0 1 0 3.275L12 12.001l3.273 3.273 3.433-3.435c2.692-2.692 2.692-7.127 0-9.82A6.92 6.92 0 0 0 13.796 0m-5.07 8.728-3.433 3.434c-2.692 2.693-2.692 7.126 0 9.819A6.92 6.92 0 0 0 10.203 24a6.93 6.93 0 0 0 4.911-2.02l3.432-3.432-3.271-3.272-3.433 3.433a2.284 2.284 0 0 1-3.277 0 2.28 2.28 0 0 1 0-3.276L12 12z"
+              />
+            </symbol>
+            <symbol id="b-jupyter" viewBox="0 0 24 24">
+              <path
+                d="M7.157 22.201A1.784 1.799 0 0 1 5.374 24a1.784 1.799 0 0 1-1.784-1.799 1.784 1.799 0 0 1 1.784-1.799 1.784 1.799 0 0 1 1.783 1.799zM20.582 1.427a1.415 1.427 0 0 1-1.415 1.428 1.415 1.427 0 0 1-1.416-1.428A1.415 1.427 0 0 1 19.167 0a1.415 1.427 0 0 1 1.415 1.427zM4.992 3.336A1.047 1.056 0 0 1 3.946 4.39a1.047 1.056 0 0 1-1.047-1.055A1.047 1.056 0 0 1 3.946 2.28a1.047 1.056 0 0 1 1.046 1.056zm7.336 1.517c3.769 0 7.06 1.38 8.768 3.424a9.363 9.363 0 0 0-3.393-4.547 9.238 9.238 0 0 0-5.377-1.728A9.238 9.238 0 0 0 6.95 3.73a9.363 9.363 0 0 0-3.394 4.547c1.713-2.04 5.004-3.424 8.772-3.424zm.001 13.295c-3.768 0-7.06-1.381-8.768-3.425a9.363 9.363 0 0 0 3.394 4.547A9.238 9.238 0 0 0 12.33 21a9.238 9.238 0 0 0 5.377-1.729 9.363 9.363 0 0 0 3.393-4.547c-1.712 2.044-5.003 3.425-8.772 3.425Z"
+              />
+            </symbol>
+            <symbol id="b-react" viewBox="0 0 24 24">
+              <path
+                d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"
+              />
+            </symbol>
+            <symbol id="b-nodedotjs" viewBox="0 0 24 24">
+              <path
+                d="M11.998,24c-0.321,0-0.641-0.084-0.922-0.247l-2.936-1.737c-0.438-0.245-0.224-0.332-0.08-0.383 c0.585-0.203,0.703-0.25,1.328-0.604c0.065-0.037,0.151-0.023,0.218,0.017l2.256,1.339c0.082,0.045,0.197,0.045,0.272,0l8.795-5.076 c0.082-0.047,0.134-0.141,0.134-0.238V6.921c0-0.099-0.053-0.192-0.137-0.242l-8.791-5.072c-0.081-0.047-0.189-0.047-0.271,0 L3.075,6.68C2.99,6.729,2.936,6.825,2.936,6.921v10.15c0,0.097,0.054,0.189,0.139,0.235l2.409,1.392 c1.307,0.654,2.108-0.116,2.108-0.89V7.787c0-0.142,0.114-0.253,0.256-0.253h1.115c0.139,0,0.255,0.112,0.255,0.253v10.021 c0,1.745-0.95,2.745-2.604,2.745c-0.508,0-0.909,0-2.026-0.551L2.28,18.675c-0.57-0.329-0.922-0.945-0.922-1.604V6.921 c0-0.659,0.353-1.275,0.922-1.603l8.795-5.082c0.557-0.315,1.296-0.315,1.848,0l8.794,5.082c0.57,0.329,0.924,0.944,0.924,1.603 v10.15c0,0.659-0.354,1.273-0.924,1.604l-8.794,5.078C12.643,23.916,12.324,24,11.998,24z M19.099,13.993 c0-1.9-1.284-2.406-3.987-2.763c-2.731-0.361-3.009-0.548-3.009-1.187c0-0.528,0.235-1.233,2.258-1.233 c1.807,0,2.473,0.389,2.747,1.607c0.024,0.115,0.129,0.199,0.247,0.199h1.141c0.071,0,0.138-0.031,0.186-0.081 c0.048-0.054,0.074-0.123,0.067-0.196c-0.177-2.098-1.571-3.076-4.388-3.076c-2.508,0-4.004,1.058-4.004,2.833 c0,1.925,1.488,2.457,3.895,2.695c2.88,0.282,3.103,0.703,3.103,1.269c0,0.983-0.789,1.402-2.642,1.402 c-2.327,0-2.839-0.584-3.011-1.742c-0.02-0.124-0.126-0.215-0.253-0.215h-1.137c-0.141,0-0.254,0.112-0.254,0.253 c0,1.482,0.806,3.248,4.655,3.248C17.501,17.007,19.099,15.91,19.099,13.993z"
+              />
+            </symbol>
+            <symbol id="b-fastapi" viewBox="0 0 24 24">
+              <path
+                d="M12 .0387C5.3729.0384.0003 5.3931 0 11.9988c-.001 6.6066 5.372 11.9628 12 11.9625 6.628.0003 12.001-5.3559 12-11.9625-.0003-6.6057-5.3729-11.9604-12-11.96m-.829 5.4153h7.55l-7.5805 5.3284h5.1828L5.279 18.5436q2.9466-6.5444 5.892-13.0896"
+              />
+            </symbol>
+            <symbol id="b-supabase" viewBox="0 0 24 24">
+              <path
+                d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"
+              />
+            </symbol>
+            <symbol id="b-postgresql" viewBox="0 0 24 24">
+              <path
+                d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.4796-.839-.9635-2.0317-1.4155-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.2374-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.0291.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128zm2.094-3.988-.0525.141c-.133.3566-.2567.6881-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2311.5454zm7.3637 4.5725c-.0169.1768-.0358.376-.0618.5959l-.146.4383a.3547.3547 0 0 0-.0182.1077c-.0059.4747-.054.6489-.115.8693-.0634.2292-.1353.4891-.1794 1.0575-.11 1.4143-.8782 2.2267-2.4172 2.5565-1.5155.3251-1.7843-.4968-2.0212-1.2217a6.5824 6.5824 0 0 0-.0769-.2266c-.2154-.5858-.1911-1.4119-.1574-2.5551.0165-.5612-.0249-1.9013-.3302-2.6462.0044-.2932.0106-.5909.019-.8918a.3529.3529 0 0 0-.0153-.1126 1.4927 1.4927 0 0 0-.0439-.208c-.1226-.4283-.4213-.7866-.7797-.9351-.1424-.059-.4038-.1672-.7178-.0869.067-.276.1831-.5875.309-.9249l.0529-.142c.0595-.16.134-.3257.213-.5012.4265-.9476 1.0106-2.2453.3766-5.1772-.2374-1.0981-1.0304-1.6343-2.2324-1.5098-.7207.0746-1.3799.3654-1.7088.5321a5.6716 5.6716 0 0 0-.1958.1041c.0918-1.1064.4386-3.1741 1.7357-4.4823a4.0306 4.0306 0 0 1 .3033-.276.3532.3532 0 0 0 .1447-.0644c.7524-.5706 1.6945-.8506 2.802-.8325.4091.0067.8017.0339 1.1742.081 1.939.3544 3.2439 1.4468 4.0359 2.3827.8143.9623 1.2552 1.9315 1.4312 2.4543-1.3232-.1346-2.2234.1268-2.6797.779-.9926 1.4189.543 4.1729 1.2811 5.4964.1353.2426.2522.4522.2889.5413.2403.5825.5515.9713.7787 1.2552.0696.087.1372.1714.1885.245-.4008.1155-1.1208.3825-1.0552 1.717-.0123.1563-.0423.4469-.0834.8148-.0461.2077-.0702.4603-.0994.7662zm.8905-1.6211c-.0405-.8316.2691-.9185.5967-1.0105a2.8566 2.8566 0 0 0 .135-.0406 1.202 1.202 0 0 0 .1342.103c.5703.3765 1.5823.4213 3.0068.1344-.2016.1769-.5189.3994-.9533.6011-.4098.1903-1.0957.333-1.7473.3636-.7197.0336-1.0859-.0807-1.1721-.151zm.5695-9.2712c-.0059.3508-.0542.6692-.1054 1.0017-.055.3576-.112.7274-.1264 1.1762-.0142.4368.0404.8909.0932 1.3301.1066.887.216 1.8003-.2075 2.7014a3.5272 3.5272 0 0 1-.1876-.3856c-.0527-.1276-.1669-.3326-.3251-.6162-.6156-1.1041-2.0574-3.6896-1.3193-4.7446.3795-.5427 1.3408-.5661 2.1781-.463zm.2284 7.0137a12.3762 12.3762 0 0 0-.0853-.1074l-.0355-.0444c.7262-1.1995.5842-2.3862.4578-3.4385-.0519-.4318-.1009-.8396-.0885-1.2226.0129-.4061.0666-.7543.1185-1.0911.0639-.415.1288-.8443.1109-1.3505.0134-.0531.0188-.1158.0118-.1902-.0457-.4855-.5999-1.938-1.7294-3.253-.6076-.7073-1.4896-1.4972-2.6889-2.0395.5251-.1066 1.2328-.2035 2.0244-.1859 2.0515.0456 3.6746.8135 4.8242 2.2824a.908.908 0 0 1 .0667.1002c.7231 1.3556-.2762 6.2751-2.9867 10.5405zm-8.8166-6.1162c-.025.1794-.3089.4225-.6211.4225a.5821.5821 0 0 1-.0809-.0056c-.1873-.026-.3765-.144-.5059-.3156-.0458-.0605-.1203-.178-.1055-.2844.0055-.0401.0261-.0985.0925-.1488.1182-.0894.3518-.1226.6096-.0867.3163.0441.6426.1938.6113.4186zm7.9305-.4114c.0111.0792-.049.201-.1531.3102-.0683.0717-.212.1961-.4079.2232a.5456.5456 0 0 1-.075.0052c-.2935 0-.5414-.2344-.5607-.3717-.024-.1765.2641-.3106.5611-.352.297-.0414.6111.0088.6356.1851z"
+              />
+            </symbol>
+            <symbol id="b-amazonwebservices" viewBox="0 0 24 24">
+              <path
+                d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687c-.151 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167zM21.698 16.207c-2.626 1.94-6.442 2.969-9.722 2.969-4.598 0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914 0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zM22.792 14.961c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.57.695-2.994z"
+              />
+            </symbol>
+            <symbol id="b-n8n" viewBox="0 0 24 24">
+              <path
+                d="M21.4737 5.6842c-1.1772 0-2.1663.8051-2.4468 1.8947h-2.8955c-1.235 0-2.289.893-2.492 2.111l-.1038.623a1.263 1.263 0 0 1-1.246 1.0555H11.289c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947s-2.1663.8051-2.4467 1.8947H4.973c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947C1.1311 9.4737 0 10.6047 0 12s1.131 2.5263 2.5263 2.5263c1.1772 0 2.1663-.8051 2.4468-1.8947h1.4223c.2804 1.0896 1.2696 1.8947 2.4467 1.8947 1.1772 0 2.1663-.8051 2.4468-1.8947h1.0008a1.263 1.263 0 0 1 1.2459 1.0555l.1038.623c.203 1.218 1.257 2.111 2.492 2.111h.3692c.2804 1.0895 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263c-1.1772 0-2.1664.805-2.4468 1.8947h-.3692a1.263 1.263 0 0 1-1.246-1.0555l-.1037-.623A2.52 2.52 0 0 0 13.9607 12a2.52 2.52 0 0 0 .821-1.4794l.1038-.623a1.263 1.263 0 0 1 1.2459-1.0555h2.8955c.2805 1.0896 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263m0 1.2632a1.263 1.263 0 0 1 1.2631 1.2631 1.263 1.263 0 0 1-1.2631 1.2632 1.263 1.263 0 0 1-1.2632-1.2632 1.263 1.263 0 0 1 1.2632-1.2631M2.5263 10.7368A1.263 1.263 0 0 1 3.7895 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 1.2632 12a1.263 1.263 0 0 1 1.2631-1.2632m6.3158 0A1.263 1.263 0 0 1 10.1053 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 7.579 12a1.263 1.263 0 0 1 1.2632-1.2632m10.1053 3.7895a1.263 1.263 0 0 1 1.2631 1.2632 1.263 1.263 0 0 1-1.2631 1.2631 1.263 1.263 0 0 1-1.2632-1.2631 1.263 1.263 0 0 1 1.2632-1.2632"
+              />
+            </symbol>
+            <symbol id="b-vercel" viewBox="0 0 24 24">
+              <path d="m12 1.608 12 20.784H0Z" />
+            </symbol>
+            <symbol id="b-git" viewBox="0 0 24 24">
+              <path
+                d="M13.09 23.549a1.54 1.54 0 0 1-2.18 0L.451 13.089a1.54 1.54 0 0 1 0-2.179l7.191-7.19 2.733 2.733a1.85 1.85 0 0 0 .964 2.326v6.66a1.849 1.849 0 1 0 1.54 0V8.957l2.508 2.508a1.85 1.85 0 1 0 1.09-1.09l-2.634-2.634a1.85 1.85 0 0 0-2.378-2.377L8.73 2.63 10.91.451a1.54 1.54 0 0 1 2.179 0l10.459 10.46a1.54 1.54 0 0 1 0 2.179z"
+              />
+            </symbol>
+            <symbol id="b-github" viewBox="0 0 24 24">
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+              />
+            </symbol>
+          </svg>
+          <div class="marquees" aria-label="Skills and tools">
+            <div class="marquee">
+              <ul class="marquee-track">
+                <li class="skill" style="--brand: #3776ab">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-python" /></svg
+                  >Python
+                </li>
+                <li class="skill" style="--brand: #ee4c2c">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-pytorch" /></svg
+                  >PyTorch
+                </li>
+                <li class="skill" style="--brand: #ffd21e">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-huggingface" /></svg
+                  >Hugging Face
+                </li>
+                <li class="skill">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-ultralytics" /></svg
+                  >YOLO / Ultralytics
+                </li>
+                <li class="skill">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-openai" /></svg
+                  >OpenAI GPT
+                </li>
+                <li class="skill" style="--brand: #8e75b2">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-googlegemini" /></svg
+                  >Gemini
+                </li>
+                <li class="skill" style="--brand: #0467df">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-meta" /></svg
+                  >LLaMA
+                </li>
+                <li class="skill" style="--brand: #fa520f">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-mistralai" /></svg
+                  >Mistral
+                </li>
+                <li class="skill" style="--brand: #7fc8ff">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-langchain" /></svg
+                  >LangChain
+                </li>
+                <li class="skill" style="--brand: #f37626">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-jupyter" /></svg
+                  >Jupyter
+                </li>
+                <li class="skill" style="--brand: #61dafb">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-react" /></svg
+                  >React
+                </li>
+                <li class="skill" style="--brand: #5fa04e">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-nodedotjs" /></svg
+                  >Node.js
+                </li>
+                <li class="skill" style="--brand: #009688">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-fastapi" /></svg
+                  >FastAPI
+                </li>
+                <li class="skill" style="--brand: #3fcf8e">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-supabase" /></svg
+                  >Supabase
+                </li>
+                <li class="skill" style="--brand: #4169e1">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-postgresql" /></svg
+                  >PostgreSQL
+                </li>
+                <li class="skill" style="--brand: #ff9900">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-amazonwebservices" /></svg
+                  >AWS
+                </li>
+                <li class="skill" style="--brand: #ea4b71">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-n8n" /></svg
+                  >n8n
+                </li>
+                <li class="skill">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-vercel" /></svg
+                  >Vercel
+                </li>
+                <li class="skill" style="--brand: #f03c2e">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-git" /></svg
+                  >Git
+                </li>
+                <li class="skill">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-github" /></svg
+                  >GitHub
+                </li>
+              </ul>
+              <ul class="marquee-track" aria-hidden="true">
+                <li class="skill" style="--brand: #3776ab">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-python" /></svg
+                  >Python
+                </li>
+                <li class="skill" style="--brand: #ee4c2c">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-pytorch" /></svg
+                  >PyTorch
+                </li>
+                <li class="skill" style="--brand: #ffd21e">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-huggingface" /></svg
+                  >Hugging Face
+                </li>
+                <li class="skill">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-ultralytics" /></svg
+                  >YOLO / Ultralytics
+                </li>
+                <li class="skill">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-openai" /></svg
+                  >OpenAI GPT
+                </li>
+                <li class="skill" style="--brand: #8e75b2">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-googlegemini" /></svg
+                  >Gemini
+                </li>
+                <li class="skill" style="--brand: #0467df">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-meta" /></svg
+                  >LLaMA
+                </li>
+                <li class="skill" style="--brand: #fa520f">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-mistralai" /></svg
+                  >Mistral
+                </li>
+                <li class="skill" style="--brand: #7fc8ff">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-langchain" /></svg
+                  >LangChain
+                </li>
+                <li class="skill" style="--brand: #f37626">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-jupyter" /></svg
+                  >Jupyter
+                </li>
+                <li class="skill" style="--brand: #61dafb">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-react" /></svg
+                  >React
+                </li>
+                <li class="skill" style="--brand: #5fa04e">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-nodedotjs" /></svg
+                  >Node.js
+                </li>
+                <li class="skill" style="--brand: #009688">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-fastapi" /></svg
+                  >FastAPI
+                </li>
+                <li class="skill" style="--brand: #3fcf8e">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-supabase" /></svg
+                  >Supabase
+                </li>
+                <li class="skill" style="--brand: #4169e1">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-postgresql" /></svg
+                  >PostgreSQL
+                </li>
+                <li class="skill" style="--brand: #ff9900">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-amazonwebservices" /></svg
+                  >AWS
+                </li>
+                <li class="skill" style="--brand: #ea4b71">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-n8n" /></svg
+                  >n8n
+                </li>
+                <li class="skill">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-vercel" /></svg
+                  >Vercel
+                </li>
+                <li class="skill" style="--brand: #f03c2e">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-git" /></svg
+                  >Git
+                </li>
+                <li class="skill">
+                  <svg class="skill-ic" aria-hidden="true">
+                    <use href="#b-github" /></svg
+                  >GitHub
+                </li>
+              </ul>
+            </div>
+            <div class="marquee reverse">
+              <ul class="marquee-track">
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-vision" /></svg
+                  >Vision-Language Models
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-rag" /></svg
+                  >Retrieval-Augmented Generation
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-agentic" /></svg
+                  >Agentic AI
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-sliders" /></svg
+                  >LoRA / Fine-tuning
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-layers" /></svg
+                  >CNNs
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-medical" /></svg
+                  >Medical Imaging
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-target" /></svg
+                  >Object Detection
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-sparkles" /></svg
+                  >GANs & Diffusion
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-vision" /></svg
+                  >Vision Transformers
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-shield" /></svg
+                  >Explainable AI
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-chart" /></svg
+                  >LLM Evaluation
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-wand" /></svg
+                  >Prompt Engineering
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-llm" /></svg
+                  >NLP
+                </li>
+              </ul>
+              <ul class="marquee-track" aria-hidden="true">
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-vision" /></svg
+                  >Vision-Language Models
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-rag" /></svg
+                  >Retrieval-Augmented Generation
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-agentic" /></svg
+                  >Agentic AI
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-sliders" /></svg
+                  >LoRA / Fine-tuning
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-layers" /></svg
+                  >CNNs
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-medical" /></svg
+                  >Medical Imaging
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-target" /></svg
+                  >Object Detection
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-sparkles" /></svg
+                  >GANs & Diffusion
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-vision" /></svg
+                  >Vision Transformers
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-shield" /></svg
+                  >Explainable AI
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-chart" /></svg
+                  >LLM Evaluation
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-wand" /></svg
+                  >Prompt Engineering
+                </li>
+                <li class="skill skill-concept">
+                  <svg class="ic skill-ic" aria-hidden="true">
+                    <use href="#i-llm" /></svg
+                  >NLP
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── NEWS ───────────── -->
+      <section class="section">
+        <div class="container two-col">
+          <header class="section-head">
+            <p class="eyebrow">Updates</p>
+            <h2>Recent news</h2>
+          </header>
+
+          <ul class="news">
+            <li>
+              <time>Mar 2026</time>
+              <p>
+                Joined <strong>NTNU</strong> as a Research Assistant, extending
+                and deploying the EduRAG system on AWS.
+              </p>
+            </li>
+            <li>
+              <time>2026</time>
+              <p>
+                Cross-lingual LLM sentiment study published in
+                <strong>Frontiers in Artificial Intelligence</strong>.
+              </p>
+            </li>
+            <li>
+              <time>2026</time>
+              <p>
+                Self-supervised Swin-B chest X-ray study published in
+                <strong>IEEE Access</strong>.
+              </p>
+            </li>
+            <li>
+              <time>Dec 2025</time>
+              <p>
+                Completed my <strong>MS in Computer Science</strong> at Sukkur
+                IBA University.
+              </p>
+            </li>
+            <li>
+              <time>2025</time>
+              <p>
+                First-author paper on post-flood aerial image classification
+                published in <strong>IEEE Access</strong>.
+              </p>
+            </li>
+            <li>
+              <time>Jan 2025</time>
+              <p>
+                Began a fully funded research exchange at NTNU through the
+                <strong>NORPART-CONNECT</strong> project.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ───────────── SELECTED PUBLICATIONS ───────────── -->
+      <section class="section">
+        <div class="container two-col">
+          <header class="section-head">
+            <p class="eyebrow">Publications</p>
+            <h2>Selected papers</h2>
+            <a class="head-link" href="./publications.html"
+              >All publications<svg class="ic"><use href="#i-arrow" /></svg
+            ></a>
+          </header>
+
+          <ol class="pubs">
+            <li class="pub">
+              <span class="logo"
+                ><img src="./assets/images/logos/ieee.svg" alt="IEEE logo"
+              /></span>
+              <div class="pub-main">
+                <div class="pub-badges">
+                  <span class="badge badge-accent">First author</span
+                  ><span class="badge badge-gold">Q1</span>
+                </div>
+                <h3 class="pub-title">
+                  <a
+                    href="https://ieeexplore.ieee.org/document/10891453"
+                    target="_blank"
+                    rel="noopener"
+                    >Aerial Image Classification in Post-Flood Scenarios Using
+                    Robust Deep Learning and Explainable Artificial
+                    Intelligence</a
+                  >
+                </h3>
+                <p class="pub-authors">
+                  <b>A. Manaf</b>, N. Mughal, K. R. Talpur, B. A. Talpur, G.
+                  Mujtaba, S. R. Talpur
+                </p>
+                <p class="pub-venue">
+                  IEEE Access, vol. 13, pp. 35973–35984, 2025
+                </p>
+                <div class="links">
+                  <a
+                    class="lb lb-primary"
+                    href="https://ieeexplore.ieee.org/document/10891453"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-paper" /></svg>Paper</a
+                  >
+                  <a
+                    class="lb"
+                    href="https://abdulmanaf36.github.io/Post-Flood-Disaster-Management/Classification/"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-globe" /></svg>Project
+                    page</a
+                  >
+                  <a
+                    class="lb"
+                    href="https://github.com/abdulmanaf36/Post-Flood-Disaster-Management"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-github" /></svg>Code</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li class="pub">
+              <span class="logo"
+                ><img
+                  src="./assets/images/logos/elsevier.svg"
+                  alt="Elsevier logo"
+              /></span>
+              <div class="pub-main">
+                <div class="pub-badges">
+                  <span class="badge badge-gold">Q1</span>
+                </div>
+                <h3 class="pub-title">
+                  <a
+                    href="https://doi.org/10.1016/j.bspc.2024.106144"
+                    target="_blank"
+                    rel="noopener"
+                    >Enhancing Wrist Abnormality Detection with YOLO: Analysis
+                    of State-of-the-Art Single-Stage Detection Models</a
+                  >
+                </h3>
+                <p class="pub-authors">
+                  A. Ahmed, A. S. Imran, <b>A. Manaf</b>, Z. Kastrati, S. M.
+                  Daudpota
+                </p>
+                <p class="pub-venue">
+                  Biomedical Signal Processing and Control, vol. 93, 106144,
+                  2024
+                </p>
+                <div class="links">
+                  <a
+                    class="lb lb-primary"
+                    href="https://doi.org/10.1016/j.bspc.2024.106144"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-paper" /></svg>Paper</a
+                  >
+                  <a
+                    class="lb"
+                    href="https://abdulmanaf36.github.io/pediatric_wrist_abnormality_detection-end-to-end-implementation/"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-globe" /></svg>Project
+                    page</a
+                  >
+                  <a
+                    class="lb"
+                    href="https://huggingface.co/spaces/AbdulManafSahito/wrist-anomaly-detection"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-demo" /></svg>Live demo</a
+                  >
+                  <a
+                    class="lb"
+                    href="https://github.com/abdulmanaf36/Pediatric-Wrist-Abnormality-Detection-System"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-github" /></svg>Code</a
+                  >
+                </div>
+              </div>
+            </li>
+            <li class="pub">
+              <span class="logo"
+                ><img
+                  src="./assets/images/logos/frontiers.png"
+                  alt="Frontiers logo"
+              /></span>
+              <div class="pub-main">
+                <div class="pub-badges">
+                  <span class="badge badge-gold">Q1</span>
+                </div>
+                <h3 class="pub-title">
+                  <a
+                    href="https://doi.org/10.3389/frai.2026.1854873"
+                    target="_blank"
+                    rel="noopener"
+                    >Do Language Families Matter? Evaluating LLMs for Sentiment
+                    Analysis Through a Hierarchical Cross-Lingual Lens</a
+                  >
+                </h3>
+                <p class="pub-authors">
+                  M. Kastrati, <b>A. Manaf</b>, A. S. Imran, Z. Kastrati, S. M.
+                  Daudpota, M. Biba
+                </p>
+                <p class="pub-venue">
+                  Frontiers in Artificial Intelligence, vol. 9, 1854873, 2026
+                </p>
+                <div class="links">
+                  <a
+                    class="lb lb-primary"
+                    href="https://doi.org/10.3389/frai.2026.1854873"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-paper" /></svg>Paper</a
+                  >
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ───────────── FEATURED PROJECTS ───────────── -->
+      <section class="section">
+        <div class="container">
+          <header class="row-head">
+            <div>
+              <p class="eyebrow">Projects</p>
+              <h2>Featured work</h2>
+            </div>
+            <a class="head-link" href="./projects.html"
+              >All projects<svg class="ic"><use href="#i-arrow" /></svg
+            ></a>
+          </header>
+
+          <div class="project-grid">
+            <article class="project">
+              <div class="project-media">
+                <img
+                  src="./assets/images/projects/wrist-page.jpg"
+                  alt="Pediatric wrist abnormality detection web app"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-body">
+                <p class="project-kicker">Medical AI · Detection</p>
+                <h3>Pediatric Wrist Abnormality Detection</h3>
+                <p class="project-desc">
+                  YOLOv8 system for fractures and other wrist abnormalities in
+                  pediatric radiographs. 0.95 mAP on fractures; published in
+                  BSPC.
+                </p>
+                <div class="links">
+                  <a
+                    class="lb lb-primary"
+                    href="https://huggingface.co/spaces/AbdulManafSahito/wrist-anomaly-detection"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-demo" /></svg>Live demo</a
+                  >
+                  <a
+                    class="lb"
+                    href="https://abdulmanaf36.github.io/pediatric_wrist_abnormality_detection-end-to-end-implementation/"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-globe" /></svg>Project
+                    page</a
+                  >
+                  <a
+                    class="lb"
+                    href="https://github.com/abdulmanaf36/Pediatric-Wrist-Abnormality-Detection-System"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-github" /></svg>Code</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-media">
+                <img
+                  src="./assets/images/projects/student-chatbot-page.jpg"
+                  alt="EduRAG framework website"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-body">
+                <p class="project-kicker">LLMs · RAG</p>
+                <h3>EduRAG</h3>
+                <p class="project-desc">
+                  Course-specific RAG framework benchmarking GPT, Gemini, LLaMA,
+                  Mistral, and DeepSeek on faithfulness and answer relevancy.
+                </p>
+                <div class="links">
+                  <a
+                    class="lb lb-primary"
+                    href="https://edurag-chatbot.vercel.app"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-demo" /></svg>Live demo</a
+                  >
+                  <a
+                    class="lb"
+                    href="https://abdulmanaf36.github.io/Student-Chatbot/"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-globe" /></svg>Project
+                    page</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-media">
+                <img
+                  src="./assets/images/projects/pneumonia-page.jpg"
+                  alt="Pediatric chest X-ray pneumonia classifier"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-body">
+                <p class="project-kicker">Medical AI · Classification</p>
+                <h3>Pediatric Pneumonia Detection</h3>
+                <p class="project-desc">
+                  CNN classifier for pediatric chest X-rays, using GAN-based
+                  augmentation to balance scarce clinical data.
+                </p>
+                <div class="links">
+                  <a
+                    class="lb lb-primary"
+                    href="https://huggingface.co/spaces/AbdulManafSahito/Pediatric-Chest-Xray-Pneumonia-Classification-System"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-demo" /></svg>Live demo</a
+                  >
+                  <a
+                    class="lb"
+                    href="https://abdulmanaf36.github.io/Pediatric-Chest-Pneumonia-Classification/"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-globe" /></svg>Project
+                    page</a
+                  >
+                  <a
+                    class="lb"
+                    href="https://arxiv.org/abs/2507.09759"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-paper" /></svg>Paper</a
+                  >
+                  <a
+                    class="lb"
+                    href="https://github.com/abdulmanaf36/Pediatric-Chest-Pneumonia-Classification"
+                    target="_blank"
+                    rel="noopener"
+                    ><svg class="ic"><use href="#i-github" /></svg>Code</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ───────────── CONTACT ───────────── -->
+      <section class="section">
+        <div class="container">
+          <div class="contact-card">
+            <div>
+              <h2>Let's talk research.</h2>
+              <p>
+                I'm looking for PhD positions in computer vision, medical AI,
+                and multimodal learning. If your group works on these problems,
+                I'd be glad to hear from you.
+              </p>
+            </div>
+            <div class="contact-actions">
+              <a
+                class="btn btn-primary"
+                href="mailto:abdulmanafsahito@gmail.com"
+                ><svg class="ic"><use href="#i-mail" /></svg
+                >abdulmanafsahito@gmail.com</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year">2026</span> Abdul Manaf · Gjøvik, Norway</p>
+        <div class="footer-links">
+          <a href="mailto:abdulmanafsahito@gmail.com" aria-label="Email"
+            ><svg class="ic"><use href="#i-mail" /></svg
+          ></a>
+          <a
+            href="https://scholar.google.com/citations?user=hjN9iEgAAAAJ&hl=en"
+            target="_blank"
+            rel="noopener"
+            aria-label="Google Scholar"
+            ><svg class="ic"><use href="#i-scholar" /></svg
+          ></a>
+          <a
+            href="https://github.com/abdulmanaf36"
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+            ><svg class="ic"><use href="#i-github" /></svg
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/abdulmanaf36"
+            target="_blank"
+            rel="noopener"
+            aria-label="LinkedIn"
+            ><svg class="ic"><use href="#i-linkedin" /></svg
+          ></a>
+          <a
+            href="https://huggingface.co/AbdulManafSahito"
+            target="_blank"
+            rel="noopener"
+            aria-label="Hugging Face"
+            ><svg class="ic"><use href="#i-hf" /></svg
+          ></a>
+        </div>
       </div>
-    </li>
-    <li class="tl-item">
-      <div class="tl-yr">Aug 2019 –<br>Jun 2023</div>
-      <div class="tl-body">
-        <h4>Bachelor of Science in Computer Science</h4>
-        <div class="org">Sukkur IBA University, Pakistan</div>
-        <p>GPA: 3.08 / 4.00</p>
-        <div class="tl-tags"><span class="tl-tag gl">SEEF Scholarship (4-year, 2020)</span></div>
-        <p style="margin-top:.5rem;font-size:.78rem;color:var(--muted)"><strong style="color:var(--tag-t)">Key Coursework:</strong> Artificial Intelligence · ML · Robotics · Image Processing · Data Structures · Algorithms · Probability &amp; Statistics · Parallel &amp; Distributed Computing</p>
-      </div>
-    </li>
-  </ul>
+    </footer>
 
-  <div class="sec-label">Research Experience</div>
-  <ul class="tl">
-    <li class="tl-item">
-      <div class="tl-yr">Jan 2025 –<br>May 2025</div>
-      <div class="tl-body">
-        <h4>Visiting Student Researcher</h4>
-        <div class="org">Norwegian University of Science &amp; Technology (NTNU), Gjøvik, Norway &nbsp;·&nbsp; NORPART-CONNECT Project</div>
-        <ul>
-          <li>Conducted AI research for education and healthcare within international collaboration (ISA Research Group, Dr. Ali Shariq Imran &amp; Dr. Zenun Kastrati)</li>
-          <li>Developed <strong>EduRAG</strong> — LLM-powered RAG framework; GPT-RAG achieved <strong>0.98 answer relevancy, 0.81 context recall</strong>; Gemini-RAG: 0.84 faithfulness; Mistral-RAG: 0.65–0.88 context precision; manuscript under review at <em>Discover AI</em> (Springer)</li>
-          <li>Deployed interactive educational assistant: <a href="https://edurag-chatbot.vercel.app" target="_blank">edurag-chatbot.vercel.app</a></li>
-          <li>Co-authored Swin-B Transformer multi-label chest X-ray classification paper — <strong>AUC 0.83, IoU 0.16</strong>; published in IEEE</li>
-          <li>Demonstrated task-specific model trade-offs; DeepSeek/LLaMA showed lower correctness (0.45–0.63)</li>
-        </ul>
-        <div class="tl-tags"><span class="tl-tag hl">NORPART-CONNECT</span><span class="tl-tag">RAG · LLMs</span><span class="tl-tag">Computer Vision</span><span class="tl-tag">Medical AI</span><span class="tl-tag">HPC (Idun)</span></div>
-      </div>
-    </li>
-    <li class="tl-item">
-      <div class="tl-yr">Nov 2023 –<br>May 2025</div>
-      <div class="tl-body">
-        <h4>Research Associate, Computer Vision</h4>
-        <div class="org">Sukkur IBA University, Pakistan &nbsp;·&nbsp; Sindh HEC SRSP Project</div>
-        <ul>
-          <li>Led development of deep learning-based UAV-assisted flood disaster response systems; real-world data acquisition using DJI Mini 4K drones</li>
-          <li>Proposed aerial image classification models addressing cross-region generalization and resolution challenges — <strong>98% accuracy, 92% F1-score</strong>; published in <em>IEEE Access</em></li>
-          <li>Comparative semantic segmentation analysis — <strong>Mask2Former (Swin-L) achieved 0.79 mIoU</strong> vs CNN-based methods (0.73 mIoU)</li>
-          <li>Integrated explainable AI (LIME) for model interpretability in disaster management decision-making</li>
-          <li>Extended to NLP: hate speech detection (coarse/fine-grained classification) and AI healthcare applications</li>
-        </ul>
-        <div class="tl-tags"><span class="tl-tag">Mask2Former</span><span class="tl-tag">YOLOv8</span><span class="tl-tag">XAI/LIME</span><span class="tl-tag">UAV Data</span><span class="tl-tag">Sindh HEC</span></div>
-      </div>
-    </li>
-    <li class="tl-item">
-      <div class="tl-yr">Nov 2022 –<br>Dec 2023</div>
-      <div class="tl-body">
-        <h4>Research Member</h4>
-        <div class="org">Deep-NLP Research Group (Remote)</div>
-        <ul>
-          <li>Co-authored wrist abnormality detection using YOLO-based single-stage object detection models</li>
-          <li>Benchmarked YOLOv5–v8 against Faster R-CNN on GRAZPEDWRI-DX — YOLOv8: <strong>0.95 mAP, 0.92 sensitivity</strong></li>
-          <li>Published in <em>Biomedical Signal Processing and Control</em> (Elsevier)</li>
-        </ul>
-        <div class="tl-tags"><span class="tl-tag">YOLOv5–v8</span><span class="tl-tag">Object Detection</span><span class="tl-tag">Medical Imaging</span></div>
-      </div>
-    </li>
-  </ul>
-
-  <div class="sec-label">Industry Experience</div>
-  <ul class="tl">
-    <li class="tl-item">
-      <div class="tl-yr">Aug 2025 –<br>Present</div>
-      <div class="tl-body">
-        <h4>AI &amp; Backend Developer</h4>
-        <div class="org">Sukkur IBA University (Sindh Government Projects), Pakistan</div>
-        <ul>
-          <li>Designed and deployed <strong>AI-powered complaint similarity system</strong> using RAG for large-scale government complaint data analysis and retrieval</li>
-          <li>Developed <strong>agentic AI-based email automation system</strong>, reducing manual workload from months to days during high-volume recruitment cycles</li>
-          <li>Implemented backend services for candidate data verification and validation in government recruitment processes</li>
-          <li>Built scalable backend and frontend modules including notification/announcement systems for real-time applicant communication</li>
-          <li>Designed and maintained <strong>PostgreSQL database infrastructure</strong> for secure, high-availability data management</li>
-        </ul>
-        <div class="tl-tags"><span class="tl-tag">RAG</span><span class="tl-tag">Agentic AI</span><span class="tl-tag">FastAPI</span><span class="tl-tag">PostgreSQL</span><span class="tl-tag">Node.js</span></div>
-      </div>
-    </li>
-    <li class="tl-item">
-      <div class="tl-yr">Jun 2023 –<br>Nov 2023</div>
-      <div class="tl-body">
-        <h4>Machine Learning Engineer</h4>
-        <div class="org">Fastech Systems Ltd, Sukkur, Pakistan</div>
-        <ul>
-          <li>Developed AI-driven applications: automated content generation, recommendation systems, and sentiment analysis</li>
-          <li>Built end-to-end pipelines for real-time audio sentiment analysis on streaming data</li>
-          <li>Designed and deployed scalable ML workflows, improving model performance and system reliability</li>
-        </ul>
-        <div class="tl-tags"><span class="tl-tag">NLP</span><span class="tl-tag">Recommendation Systems</span><span class="tl-tag">Real-time Inference</span></div>
-      </div>
-    </li>
-    <li class="tl-item">
-      <div class="tl-yr">Mar 2023 –<br>May 2023</div>
-      <div class="tl-body">
-        <h4>Data Scientist Intern</h4>
-        <div class="org">CodeClause, Pune, India (Remote)</div>
-        <ul>
-          <li>Developed predictive models for stock market trend analysis using Python and scikit-learn</li>
-          <li>Built classification models for wine quality prediction with feature engineering and statistical techniques</li>
-          <li>Performed EDA, data preprocessing, and model evaluation to enhance prediction accuracy</li>
-        </ul>
-        <div class="tl-tags"><span class="tl-tag">Python</span><span class="tl-tag">scikit-learn</span><span class="tl-tag">EDA</span></div>
-      </div>
-    </li>
-  </ul>
-
-  <div class="sec-label">Technical Skills</div>
-  <div class="skills-grid">
-    <div class="sg">
-      <h4>Programming</h4>
-      <div class="stags"><span class="stag core">Python</span><span class="stag core">PyTorch</span><span class="stag core">TensorFlow</span><span class="stag">HuggingFace</span><span class="stag">CUDA · Linux</span><span class="stag">JavaScript / TypeScript</span><span class="stag">Java · C++ · C# · Kotlin</span><span class="stag">SQL · MongoDB</span></div>
-    </div>
-    <div class="sg">
-      <h4>AI &amp; Machine Learning</h4>
-      <div class="stags"><span class="stag core">Computer Vision</span><span class="stag core">NLP / LLMs</span><span class="stag core">Multimodal / VLMs</span><span class="stag">RAG · Multi-Agent</span><span class="stag">Explainable AI (XAI)</span><span class="stag">LoRA / QLoRA Fine-tuning</span><span class="stag">Data Fusion</span></div>
-    </div>
-    <div class="sg">
-      <h4>Frameworks &amp; Libraries</h4>
-      <div class="stags"><span class="stag core">HuggingFace Transformers</span><span class="stag">LangChain</span><span class="stag">OpenCV · NumPy · Pandas</span><span class="stag">FastAPI · Flask</span><span class="stag">Node.js · Express.js</span><span class="stag">scikit-learn</span></div>
-    </div>
-    <div class="sg">
-      <h4>Cloud &amp; Infrastructure</h4>
-      <div class="stags"><span class="stag core">AWS (S3, EC2, Bedrock)</span><span class="stag">Docker · Kubernetes</span><span class="stag">HPC / Idun (NTNU)</span><span class="stag">Git · GitHub · CI/CD</span><span class="stag">Vercel · PythonAnywhere</span><span class="stag">n8n · Cursor</span><span class="stag">PostgreSQL · MySQL · MongoDB</span></div>
-    </div>
-  </div>
-
-  <div class="sec-label">References</div>
-  <div class="ref-grid">
-    <div class="ref-card"><strong>Ali Shariq Imran</strong><span>Associate Professor, NTNU Gjøvik, Norway</span><a href="mailto:ali.imran@ntnu.no">ali.imran@ntnu.no</a></div>
-    <div class="ref-card"><strong>Zenun Kastrati</strong><span>Associate Professor, LNU, Sweden</span><a href="mailto:zenun.kastrati@lnu.se">zenun.kastrati@lnu.se</a></div>
-    <div class="ref-card"><strong>Sher M. Daudpota</strong><span>Professor, Sukkur IBA, Pakistan</span><a href="mailto:sher@iba-suk.edu.pk">sher@iba-suk.edu.pk</a></div>
-    <div class="ref-card"><strong>Ghulam Mujtaba Shaikh</strong><span>Professor, Sukkur IBA, Pakistan</span><a href="mailto:mujtaba@iba-suk.edu.pk">mujtaba@iba-suk.edu.pk</a></div>
-  </div>
-</div></div>
-
-
-<!-- ═══════════ PROJECTS ══════════════════════════════════ -->
-<div class="page" id="page-projects"><div class="container">
-  <h2 class="sec-head">Projects</h2>
-  <div class="proj-filters">
-    <button class="filt active" onclick="filterProjects('all',this)">All</button>
-    <button class="filt" onclick="filterProjects('medical',this)">Medical AI</button>
-    <button class="filt" onclick="filterProjects('vision',this)">Computer Vision</button>
-    <button class="filt" onclick="filterProjects('nlp',this)">NLP / LLM</button>
-    <button class="filt" onclick="filterProjects('agentic',this)">Agentic AI</button>
-    <button class="filt" onclick="filterProjects('web',this)">Web / Fullstack</button>
-  </div>
-  <div class="proj-grid" id="proj-grid">
-    <div class="proj-card" data-cat="medical"><div class="proj-placeholder">🧠</div><div class="proj-body"><div class="proj-cat">Medical AI · VLM · MS Thesis</div><div class="proj-title">ROI-Guided Multimodal Lesion Description Framework</div><div class="proj-desc">Benchmarked MedFlamingo, MedLLaVA, MedGemma, Qwen2-VL with LoRA/full fine-tuning on MedTrinity-25M. RAGAS evaluation.</div><div class="proj-links"><a href="https://github.com/abdulmanafsahito/Thesis-Work" target="_blank" class="plnk">GitHub</a></div></div></div>
-    <div class="proj-card" data-cat="medical vision"><img src="./assets/images/projects/chest_prediatric.png" alt="Pediatric CXR" class="proj-img" onerror="this.style.display='none'" /><div class="proj-body"><div class="proj-cat">Medical AI · Computer Vision</div><div class="proj-title">Pediatric Chest X-ray Pneumonia Classification</div><div class="proj-desc">CNN + GAN-based data balancing for pediatric pneumonia classification on imbalanced clinical datasets.</div><div class="proj-links"><a href="https://huggingface.co/spaces/AbdulManafSahito/Pediatric-Chest-Xray-Pneumonia-Classification-System" target="_blank" class="plnk demo">Demo</a><a href="https://github.com/AbdulManafSahito/Pediatric-Chest-Pneumonia-Classification-Leveraging-Traditional-CNN-with-GAN-for-Data-Balancing" target="_blank" class="plnk">GitHub</a></div></div></div>
-    <div class="proj-card" data-cat="medical vision"><img src="./assets/images/projects/wrist-detection-demo.png" alt="Wrist Detection" class="proj-img" onerror="this.style.display='none'" /><div class="proj-body"><div class="proj-cat">Medical AI · Object Detection</div><div class="proj-title">Pediatric Wrist Abnormality Detection System</div><div class="proj-desc">YOLOv5–v8 benchmarking on GRAZPEDWRI-DX. YOLOv8: 0.95 mAP, 0.92 sensitivity. Published in Elsevier BSPC.</div><div class="proj-links"><a href="https://huggingface.co/spaces/AbdulManafSahito/wrist-anomaly-detection" target="_blank" class="plnk demo">Demo</a><a href="https://github.com/AbdulManafSahito/Pediatric-Wrist-Abnormality-Detection-System" target="_blank" class="plnk">GitHub</a></div></div></div>
-    <div class="proj-card" data-cat="vision"><div class="proj-placeholder">🌊</div><div class="proj-body"><div class="proj-cat">Computer Vision · Disaster AI</div><div class="proj-title">Post-Flood Scene Analysis (Classification + Segmentation)</div><div class="proj-desc">98% accuracy aerial classification + Mask2Former segmentation (Swin-L, 0.79 mIoU). XAI-LIME. Published in IEEE Access.</div><div class="proj-links"><a href="https://abdulmanaf.me/Post-Flood-Disaster-Management/Classification/" target="_blank" class="plnk demo">Project Page</a><a href="https://github.com/AbdulManafSahito/Post-Flood-Disaster-Management" target="_blank" class="plnk">GitHub</a></div></div></div>
-    <div class="proj-card" data-cat="vision"><div class="proj-placeholder">👁️</div><div class="proj-body"><div class="proj-cat">Computer Vision · OCR</div><div class="proj-title">Vision OCR — Image Understanding with Gemini &amp; GPT</div><div class="proj-desc">Multimodal OCR and document understanding powered by Gemini and GPT-4 Vision.</div><div class="proj-links"><a href="https://ai-vision-ocr.vercel.app/" target="_blank" class="plnk demo">Demo</a><a href="https://github.com/abdulmanafsahito/Vision-OCR" target="_blank" class="plnk">GitHub</a></div></div></div>
-    <div class="proj-card" data-cat="nlp"><div class="proj-placeholder">📚</div><div class="proj-body"><div class="proj-cat">NLP · RAG · Education</div><div class="proj-title">EduRAG — Educational RAG Chatbot Framework</div><div class="proj-desc">LLM-powered RAG with course material integration. GPT-RAG: 0.98 answer relevancy. Under review at Discover AI (Springer).</div><div class="proj-links"><a href="https://edurag-chatbot.vercel.app" target="_blank" class="plnk demo">Demo</a></div></div></div>
-    <div class="proj-card" data-cat="nlp"><div class="proj-placeholder">🌍</div><div class="proj-body"><div class="proj-cat">NLP · LLM Benchmarking</div><div class="proj-title">Multilingual LLM Benchmark (36 Languages)</div><div class="proj-desc">Evaluating 5 LLMs across 36 languages with hierarchical language-family analytical lens. Manuscript in preparation.</div><div class="proj-links"><a href="https://github.com/abdulmanafsahito" target="_blank" class="plnk">GitHub</a></div></div></div>
-    <div class="proj-card" data-cat="nlp"><div class="proj-placeholder">💬</div><div class="proj-body"><div class="proj-cat">NLP · Assessment</div><div class="proj-title">CortexTest: LLM Assessment Tool</div><div class="proj-desc">AI-powered educational assessment system evaluating LLM capabilities in structured learning contexts.</div><div class="proj-links"><a href="https://edu-scan-assist.vercel.app/" target="_blank" class="plnk demo">Demo</a><a href="https://github.com/AbdulManafSahito/CortexTest-LLM-Assessment-Too" target="_blank" class="plnk">GitHub</a></div></div></div>
-    <div class="proj-card" data-cat="agentic"><div class="proj-placeholder">💹</div><div class="proj-body"><div class="proj-cat">Agentic AI · Finance</div><div class="proj-title">AI Finance Agent Team</div><div class="proj-desc">Multi-agent financial intelligence system for market analysis and investment research powered by GPT-4.</div><div class="proj-links"><a href="https://manafai.pythonanywhere.com/finance_agent" target="_blank" class="plnk demo">Demo</a><a href="https://github.com/AbdulManafSahito/AI-Finance-Agent-Team" target="_blank" class="plnk">GitHub</a></div></div></div>
-    <div class="proj-card" data-cat="agentic"><div class="proj-placeholder">🔬</div><div class="proj-body"><div class="proj-cat">Agentic AI · Research</div><div class="proj-title">AI Research Agent — GPT-4 Powered Reports</div><div class="proj-desc">Automated research report generation with multi-step reasoning and web search synthesis.</div><div class="proj-links"><a href="https://manafai.pythonanywhere.com/research_agent" target="_blank" class="plnk demo">Demo</a><a href="https://github.com/AbdulManafSahito/AI-Research-Agent" target="_blank" class="plnk">GitHub</a></div></div></div>
-    <div class="proj-card" data-cat="agentic web"><div class="proj-placeholder">⚡</div><div class="proj-body"><div class="proj-cat">Agentic AI · Developer Tool</div><div class="proj-title">PromptFlow Studio</div><div class="proj-desc">Visual workspace for designing, testing, and managing AI prompt workflows collaboratively.</div><div class="proj-links"><a href="https://prompt-flow-studio.vercel.app/" target="_blank" class="plnk demo">Demo</a><a href="https://github.com/abdulmanafsahito/PromptFlow-Studio" target="_blank" class="plnk">GitHub</a></div></div></div>
-    <div class="proj-card" data-cat="web agentic"><div class="proj-placeholder">🏛️</div><div class="proj-body"><div class="proj-cat">Fullstack · Government AI</div><div class="proj-title">Sindh Government AI Platform</div><div class="proj-desc">AI-powered complaint similarity (RAG), agentic email automation, and recruitment backend for government-scale operations.</div><div class="proj-links"><a href="https://github.com/abdulmanafsahito" target="_blank" class="plnk">GitHub</a></div></div></div>
-  </div>
-</div></div>
-
-
-<!-- ═══════════ ACHIEVEMENTS ════════════════════════════ -->
-<div class="page" id="page-achievements"><div class="container">
-  <h2 class="sec-head">Achievements</h2>
-
-  <div class="ntnu-block">
-    <h3>🇳🇴 NORPART-CONNECT Research Fellowship — NTNU, Norway</h3>
-    <p>Selected for a fully-funded 6-month Research Fellowship at the Norwegian University of Science and Technology (NTNU), Gjøvik, Norway (January – May 2025). Collaborated with the Intelligent Systems &amp; Analytics (ISA) Research Group under Associate Professor Dr. Ali Shariq Imran as part of the NORPART-CONNECT bilateral Norway–Pakistan research project.</p>
-    <p><strong>Outcomes:</strong> IEEE publication on Swin-B CXR classification (AUC 0.83) · EduRAG under review at Springer · GPT-RAG 0.98 answer relevancy · Traveled across 9 countries during exchange</p>
-    <div class="ntnu-links">
-      <a href="./assets/images/certificates/Confirmation_Student_Status_Digitally_Signed.pdf" target="_blank" class="ntnu-link">View Certificate</a>
-      <a href="https://ieeexplore.ieee.org/document/11357941/" target="_blank" class="ntnu-link">IEEE Paper</a>
-      <a href="https://edurag-chatbot.vercel.app" target="_blank" class="ntnu-link">EduRAG Demo</a>
-    </div>
-  </div>
-
-  <div class="ach-grid">
-    <div class="ach-card gold"><div class="ach-icon">🏆</div><div class="ach-title">Ranked #1 in MS CS Batch</div><div class="ach-desc">Highest GPA (3.43/4.00) in the MS Computer Science cohort at Sukkur IBA University, graduating Dec 2025.</div></div>
-    <div class="ach-card gold"><div class="ach-icon">💻</div><div class="ach-title">PM's Youth Laptop Scheme 2025</div><div class="ach-desc">Awarded under Hunarmand Pakistan (Prime Minister's Youth Programme) for academic excellence as the top MS CS graduate.</div></div>
-    <div class="ach-card blue"><div class="ach-icon">🇳🇴</div><div class="ach-title">NTNU NORPART-CONNECT Fellow</div><div class="ach-desc">Fully-funded 6-month international research exchange at NTNU Norway (Jan–May 2025). Competitive bilateral Norway–Pakistan selection.</div></div>
-    <div class="ach-card green"><div class="ach-icon">🎓</div><div class="ach-title">SEEF Scholarship (4-Year, 2020)</div><div class="ach-desc">Sindh Educational Endowment Fund merit scholarship covering the full BS Computer Science degree at IBA Sukkur. <a href="https://seef.sindh.gov.pk/" target="_blank">seef.sindh.gov.pk</a></div></div>
-    <div class="ach-card blue"><div class="ach-icon">📄</div><div class="ach-title">5 Research Papers Published</div><div class="ach-desc">Published in IEEE Access, IEEE (FIT 2024), Elsevier BSPC, and ACM Transactions — computer vision, medical imaging, and NLP.</div></div>
-    <div class="ach-card gold"><div class="ach-icon">🌍</div><div class="ach-title">9 Countries Explored</div><div class="ach-desc">Norway · Poland · Hungary · Austria · Czech Republic · Germany · Spain · Pakistan · Saudi Arabia — during the NTNU exchange &amp; personal travel.</div></div>
-    <div class="ach-card green"><div class="ach-icon">🤖</div><div class="ach-title">MS Thesis Defended</div><div class="ach-desc">Successfully defended Feb 2026 — ROI-guided multimodal VLMs for medical image lesion description generation.</div></div>
-    <div class="ach-card blue"><div class="ach-icon">⚡</div><div class="ach-title">HPC Access — Idun Cluster (NTNU)</div><div class="ach-desc">Access to NTNU's Idun HPC cluster for large-scale deep learning experiments during the NORPART-CONNECT fellowship.</div></div>
-  </div>
-
-  <div class="sec-label" style="margin-top:1.5rem">Sindh Educational Endowment Fund (SEEF) — Detail</div>
-  <div style="background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:1.2rem 1.4rem;font-size:.82rem;line-height:1.7;color:var(--muted)">
-    <p style="margin-bottom:.5rem"><strong style="color:var(--text)">Sindh Educational Endowment Fund (SEEF)</strong> is registered vide Trust Deed No. 625/2020. The programme provides need-based scholarships to meritorious students in Sindh for higher education. I was awarded the SEEF Scholarship in 2020, which supported my entire four-year BS Computer Science studies at Sukkur IBA University.</p>
-    <p><a href="https://seef.sindh.gov.pk/" target="_blank">Official SEEF portal →</a> &nbsp;·&nbsp; <a href="https://form-seef.com/" target="_blank">form-seef.com →</a></p>
-  </div>
-</div></div>
-
-
-<!-- ═══════════ CERTIFICATES ════════════════════════════ -->
-<div class="page" id="page-certificates"><div class="container">
-  <h2 class="sec-head">Certifications</h2>
-
-  <div class="sec-label">AI &amp; Deep Learning Specializations</div>
-  <div class="cert-grid">
-    <a href="https://coursera.org/share/0ae64a8759c46a599931fda05d56311d" target="_blank" class="cert-card"><img src="./assets/images/certificates/specilization_gen_ai.png" alt="Gen AI Learning Path" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">AI Specialization · Google Cloud</div><div class="cert-title">Introduction to Generative AI Learning Path</div><div class="cert-meta">April 3, 2025 · Coursera</div></div></a>
-    <a href="https://coursera.org/share/a567259b0e27277455ebbf14b64ef49b" target="_blank" class="cert-card"><img src="./assets/images/certificates/intro_responsibleAI_applying.png" alt="Responsible AI Applying" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">AI Ethics · Google Cloud</div><div class="cert-title">Responsible AI: Applying AI Principles with Google Cloud</div><div class="cert-meta">April 3, 2025 · Coursera</div></div></a>
-    <a href="https://coursera.org/share/b454f0303bed5b36a0a46284916127c2" target="_blank" class="cert-card"><img src="./assets/images/certificates/ai_responsible.png" alt="Intro Responsible AI" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">AI Ethics · Google Cloud</div><div class="cert-title">Introduction to Responsible AI</div><div class="cert-meta">April 3, 2025 · Coursera</div></div></a>
-    <a href="https://coursera.org/share/c99276d3657e552165884ba02d8e1e75" target="_blank" class="cert-card"><img src="./assets/images/certificates/intro_llms.png" alt="Intro LLMs" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Deep Learning · Google Cloud</div><div class="cert-title">Introduction to Large Language Models</div><div class="cert-meta">April 3, 2025 · Coursera</div></div></a>
-    <a href="https://coursera.org/share/4af4a60b27703c0ec421dc3a3753438d" target="_blank" class="cert-card"><img src="./assets/images/certificates/intro_genAI.png" alt="Intro GenAI" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Deep Learning · Google Cloud</div><div class="cert-title">Introduction to Generative AI</div><div class="cert-meta">April 2, 2025 · Coursera</div></div></a>
-    <a href="https://coursera.org/share/a4daf1933fa496cbb742905fc01e5c2b" target="_blank" class="cert-card"><img src="./assets/images/certificates/rag_intro.png" alt="RAG Intro" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Deep Learning · Duke University</div><div class="cert-title">Introduction to Retrieval Augmented Generation (RAG)</div><div class="cert-meta">March 29, 2025 · Coursera</div></div></a>
-    <a href="https://coursera.org/share/701e51631a923c2d906230f90f8291fb" target="_blank" class="cert-card"><img src="./assets/images/certificates/sequence_models.png" alt="Sequence Models" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Deep Learning · DeepLearning.AI</div><div class="cert-title">Sequence Models</div><div class="cert-meta">March 16, 2025 · Coursera</div></div></a>
-    <a href="https://coursera.org/share/750b2d40d61eb434f7114f502287b716" target="_blank" class="cert-card"><img src="./assets/images/certificates/cnn.png" alt="CNN" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Deep Learning · DeepLearning.AI</div><div class="cert-title">Convolutional Neural Networks</div><div class="cert-meta">February 15, 2024 · Coursera</div></div></a>
-    <a href="https://coursera.org/share/b66a7cc6e364760f64e562cf693a3543" target="_blank" class="cert-card"><img src="./assets/images/certificates/structuring_machine_learning.png" alt="Structuring ML" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Deep Learning · DeepLearning.AI</div><div class="cert-title">Structuring Machine Learning Projects</div><div class="cert-meta">February 8, 2024 · Coursera</div></div></a>
-    <a href="https://coursera.org/share/f84ed8e2af13f7d1aceb812fc33560ff" target="_blank" class="cert-card"><img src="./assets/images/certificates/Hyperparameter.png" alt="Hyperparameter Tuning" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Deep Learning · DeepLearning.AI</div><div class="cert-title">Improving Deep Neural Networks: Hyperparameter Tuning, Regularization &amp; Optimization</div><div class="cert-meta">February 8, 2024 · Coursera</div></div></a>
-    <a href="https://coursera.org/share/78fe455586f657676a78558e9d5412e1" target="_blank" class="cert-card"><img src="./assets/images/certificates/Neural Networks and Deep Learning.png" alt="Neural Networks" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Deep Learning · DeepLearning.AI</div><div class="cert-title">Neural Networks and Deep Learning</div><div class="cert-meta">March 1, 2023 · Coursera</div></div></a>
-  </div>
-
-  <div class="sec-label">Data Science &amp; Databases</div>
-  <div class="cert-grid">
-    <a href="https://coursera.org/share/58563abd7fb15320763d660a3631210c" target="_blank" class="cert-card"><img src="./assets/images/certificates/What is Data Science.png" alt="Data Science" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Data Science · IBM</div><div class="cert-title">What is Data Science?</div><div class="cert-meta">February 15, 2023 · Coursera</div></div></a>
-    <a href="https://www.datacamp.com/courses/introduction-to-relational-databases-in-sql" target="_blank" class="cert-card"><img src="./assets/images/certificates/Relational DB.PNG" alt="Relational Databases" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Database · DataCamp</div><div class="cert-title">Introduction to Relational Databases in SQL</div><div class="cert-meta">April 24, 2021 · DataCamp</div></div></a>
-    <a href="#" class="cert-card"><img src="./assets/images/certificates/SQL.PNG" alt="SQL" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Database · DataCamp</div><div class="cert-title">Introduction to SQL</div><div class="cert-meta">April 21, 2021 · DataCamp</div></div></a>
-  </div>
-
-  <div class="sec-label">Programming &amp; Web Development</div>
-  <div class="cert-grid">
-    <a href="https://coursera.org/share/fba6814c1197ab08366da5e38d51ffef" target="_blank" class="cert-card"><img src="./assets/images/certificates/Python.PNG" alt="Python" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Programming · University of Michigan</div><div class="cert-title">Programming for Everybody (Getting Started with Python)</div><div class="cert-meta">July 25, 2020 · Coursera</div></div></a>
-    <a href="https://coursera.org/share/d165f52ed1e931bf849f484ce40bdde6" target="_blank" class="cert-card"><img src="./assets/images/certificates/HTML5.PNG" alt="HTML5" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Web Development · University of Michigan</div><div class="cert-title">Introduction to HTML5</div><div class="cert-meta">July 24, 2020 · Coursera</div></div></a>
-    <a href="https://www.coursera.org/account/accomplishments/verify/3X43N3M79MCA" target="_blank" class="cert-card"><img src="./assets/images/certificates/Firebase.PNG" alt="Firebase" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Android Development · Coursera</div><div class="cert-title">Build a Firebase Android Application</div><div class="cert-meta">February 15, 2023 · Coursera</div></div></a>
-    <a href="https://www.sololearn.com/certificates/CT-NUKNC2KG" target="_blank" class="cert-card"><img src="./assets/images/certificates/Kotlin.png" alt="Kotlin" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Programming · Sololearn</div><div class="cert-title">Kotlin Fundamentals</div><div class="cert-meta">September 1, 2022 · Sololearn</div></div></a>
-  </div>
-
-  <div class="sec-label">Mathematics &amp; Engineering</div>
-  <div class="cert-grid">
-    <a href="https://coursera.org/share/6b818400b840c983352c78e31541e98d" target="_blank" class="cert-card"><img src="./assets/images/certificates/Mathematical_Thinking.png" alt="Mathematical Thinking" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Computer Science · UC San Diego / HSE</div><div class="cert-title">Mathematical Thinking in Computer Science</div><div class="cert-meta">July 14, 2020 · Coursera</div></div></a>
-    <a href="https://matlabacademy.mathworks.com/details/matlab-onramp/gettingstarted" target="_blank" class="cert-card"><img src="./assets/images/certificates/matlab.PNG" alt="MATLAB" class="cert-img" loading="lazy" /><div class="cert-body"><div class="cert-cat">Engineering · MathWorks</div><div class="cert-title">MATLAB Onramp</div><div class="cert-meta">March 23, 2022 · MathWorks Academy</div></div></a>
-  </div>
-</div></div>
-
-
-<!-- ── Footer ─────────────────────────────────────────── -->
-<footer>Abdul Manaf &nbsp;·&nbsp; Gjøvik, Norway &nbsp;·&nbsp; <a href="mailto:abdulmanafsahito@gmail.com">abdulmanafsahito@gmail.com</a> &nbsp;·&nbsp; <a href="https://scholar.google.com/citations?user=hjN9iEgAAAAJ&hl=en" target="_blank">Google Scholar</a> &nbsp;·&nbsp; <a href="https://github.com/abdulmanafsahito" target="_blank">GitHub</a> &nbsp;·&nbsp; <a href="https://abdulmanaf.me" target="_blank">abdulmanaf.me</a></footer>
-
-<script>
-  function showPage(id,btn){
-    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-    document.querySelectorAll('.topnav-links button').forEach(b=>b.classList.remove('active'));
-    document.getElementById('page-'+id).classList.add('active');
-    btn.classList.add('active');
-    window.scrollTo({top:0,behavior:'smooth'});
-  }
-  function filterProjects(cat,btn){
-    document.querySelectorAll('.filt').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.proj-card').forEach(card=>{
-      const cats=(card.dataset.cat||'').split(' ');
-      card.classList.toggle('hidden',cat!=='all'&&!cats.includes(cat));
-    });
-  }
-</script>
-</body>
+    <script src="./assets/js/main.js"></script>
+  </body>
 </html>
