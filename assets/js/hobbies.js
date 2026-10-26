@@ -1,11 +1,5 @@
 (function () {
   // ── Places visited. To add one: { name, region, country, note, lat, lng }
-  var REGIONS = {
-    pk: { label: "Pakistan", note: "Home country — from the Thar Desert to Skardu" },
-    sa: { label: "Saudi Arabia", note: "Umrah in 2018 and 2024" },
-    no: { label: "Norway", note: "2025 – present" },
-    eu: { label: "Europe", note: "2025" }
-  };
 
   var PLACES = [
     { name: "Thar Desert", region: "pk", country: "Pakistan", lat: 24.74, lng: 69.8 },
@@ -46,36 +40,6 @@
 
   var root = document.documentElement;
   var GREEN = "#16a34a";
-
-  // ── Stats
-  var placesStat = document.querySelector('[data-stat="places"]');
-  if (placesStat) placesStat.textContent = PLACES.length;
-  var countriesStat = document.querySelector('[data-stat="countries"]');
-  if (countriesStat) {
-    var seen = {};
-    PLACES.forEach(function (p) { seen[p.country] = 1; });
-    countriesStat.textContent = Object.keys(seen).length;
-  }
-
-  // ── Region list (always rendered, works without the map)
-  var list = document.getElementById("region-list");
-  Object.keys(REGIONS).forEach(function (key) {
-    var r = REGIONS[key];
-    var items = PLACES.filter(function (p) { return p.region === key; });
-    var block = document.createElement("div");
-    block.className = "region";
-    block.innerHTML =
-      '<h3>' + r.label + ' <span>' + r.note + '</span></h3><ul class="place-list"></ul>';
-    var ul = block.querySelector("ul");
-    items.forEach(function (p) {
-      var li = document.createElement("li");
-      li.innerHTML = '<button type="button" class="place"><span class="map-dot" aria-hidden="true"></span>' +
-        p.name + (key === "eu" ? '<small>' + p.country + "</small>" : "") + "</button>";
-      li.querySelector("button").addEventListener("click", function () { focusPlace(p); });
-      ul.appendChild(li);
-    });
-    list.appendChild(block);
-  });
 
   // ── Map (Leaflet + Esri gray canvas basemaps, no API key needed)
   var map = null, tiles = null, markers = [];

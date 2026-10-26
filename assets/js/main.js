@@ -27,6 +27,10 @@
     llm: '<path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/>',
     agentic: '<rect x="5" y="8" width="14" height="11" rx="2"/><path d="M12 8V4M9 13h.01M15 13h.01M9 16.5h6M3 13v2M21 13v2"/><circle cx="12" cy="3.5" r="1"/>',
     web: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/>',
+    // project-type tabs
+    flask: '<path d="M9 3h6M10 3v6.5L4.6 18.4A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.4-2.6L14 9.5V3"/><path d="M7 15h10"/>',
+    code: '<path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/>',
+    briefcase: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/>',
     // concept glyphs for the home-page skills strip
     layers: '<path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/>',
     sparkles: '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16v4M17 18h4"/>',
@@ -70,30 +74,38 @@
 
   // ── Search + category filter (projects and publications pages)
   //    Items: [data-filter-item] with data-cat="a b"; chips: [data-filter] buttons.
+  //    Optional type tabs: [data-filter-type] buttons match the item's [data-group] ancestor;
+  //    [data-type-count="x"] shows how many items of type x pass the topic + search filters.
   var list = document.querySelector("[data-filter-list]");
   if (list) {
     var items = Array.prototype.slice.call(list.querySelectorAll("[data-filter-item]"));
     var chips = Array.prototype.slice.call(document.querySelectorAll("[data-filter]"));
+    var types = Array.prototype.slice.call(document.querySelectorAll("[data-filter-type]"));
+    var typeCounts = Array.prototype.slice.call(document.querySelectorAll("[data-type-count]"));
     var input = document.querySelector("[data-search]");
     var count = document.querySelector("[data-count]");
     var empty = document.querySelector("[data-empty]");
     var groups = Array.prototype.slice.call(list.querySelectorAll("[data-filter-group]"));
     var noun = list.getAttribute("data-noun") || "items";
-    var active = "all";
+    var active = "all", activeType = "all";
 
     function apply() {
       var q = input ? input.value.trim().toLowerCase() : "";
-      var shown = 0;
+      var shown = 0, perType = { all: 0 };
       items.forEach(function (el) {
         var cats = (el.getAttribute("data-cat") || "").split(" ");
-        var ok = (active === "all" || cats.indexOf(active) !== -1) &&
-                 (!q || el.textContent.toLowerCase().indexOf(q) !== -1);
+        var g = el.closest("[data-group]"), type = g ? g.getAttribute("data-group") : "";
+        var match = (active === "all" || cats.indexOf(active) !== -1) &&
+                    (!q || el.textContent.toLowerCase().indexOf(q) !== -1);
+        if (match) { perType.all++; perType[type] = (perType[type] || 0) + 1; }
+        var ok = match && (activeType === "all" || type === activeType);
         el.hidden = !ok;
         if (ok) shown++;
       });
       groups.forEach(function (g) {
         g.hidden = !g.querySelector("[data-filter-item]:not([hidden])");
       });
+      typeCounts.forEach(function (el) { el.textContent = perType[el.getAttribute("data-type-count")] || 0; });
       if (count) count.textContent = shown + " " + (shown === 1 ? noun.replace(/s$/, "") : noun);
       if (empty) empty.classList.toggle("show", shown === 0);
     }
@@ -105,6 +117,16 @@
         apply();
       });
     });
+    types.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        activeType = tab.getAttribute("data-filter-type");
+        types.forEach(function (t) { t.setAttribute("aria-pressed", String(t === tab)); });
+        apply();
+      });
+    });
+    // deep links like projects.html#client open on that type
+    var hashTab = location.hash && document.querySelector('[data-filter-type="' + location.hash.slice(1) + '"]');
+    if (hashTab) hashTab.click();
     if (input) input.addEventListener("input", apply);
     apply();
   }
@@ -130,7 +152,7 @@
       ".section-head", ".row-head", ".prose", ".interests li", ".news li", ".pub",
       ".project", ".entry", ".rows > li", ".skills > div", ".certs a", ".contact-card",
       ".stats", ".orgs", ".marquees", ".toolbar", ".pub-year-label", ".feature-card",
-      ".map-wrap", ".region", ".hobby-card"
+      ".map-wrap", ".region", ".hobby-card", ".type-tabs", ".group-head"
     ].join(",");
 
     var targets = Array.prototype.slice.call(document.querySelectorAll(REVEAL)).filter(function (el) {

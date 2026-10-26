@@ -13,7 +13,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects — Abdul Manaf</title>
-    <meta name="description" content="Research and engineering projects by Abdul Manaf: medical AI, computer vision, LLMs, RAG, agentic AI, and full-stack apps." />
+    <meta name="description" content="Research, development, and client projects by Abdul Manaf: medical AI, computer vision, LLMs, RAG, agentic AI, full-stack apps, and client websites." />
     <link rel="icon" href="./assets/images/Manaf.jpg" />
 
     <script>
@@ -56,20 +56,57 @@
     <main id="main">
       <section class="page-hero">
         <div class="container">
-          <h1>Projects</h1>
-          <p>Research prototypes, deployed demos, and engineering work across medical AI, computer vision, language models, and full-stack development.</p>
+          <div class="hero-split">
+            <div>
+              <h1>Projects</h1>
+              <p>Research prototypes, products I've built end to end, and websites delivered for clients, across medical AI, computer vision, language models, and full-stack development.</p>
+            </div>
+            <svg class="ill ill-hero" viewBox="0 0 320 220" aria-hidden="true">
+              <g style="--c: var(--accent)"><circle class="bg" cx="160" cy="112" r="96"/>
+              <rect class="pa ln" x="72" y="40" width="176" height="122" rx="8"/>
+              <path class="ln" d="M72 56h176"/>
+              <circle class="ac" cx="82" cy="48" r="2.4"/><circle class="ac2" cx="91" cy="48" r="2.4"/><circle class="ac2" cx="100" cy="48" r="2.4"/>
+              <rect class="ac2" x="86" y="68" width="72" height="44" rx="4"/>
+              <path class="lna" d="M98 82l-8 8 8 8M146 82l8 8-8 8M126 78l-8 24"/>
+              <path class="ln" d="M170 72h62M170 82h48M170 92h56M86 126h146M86 136h110M86 146h80"/></g>
+              <g class="bob" style="--c: var(--cat-llm)"><circle class="ac2 ln" cx="62" cy="152" r="24"/><path class="ln" d="M57 140h10M58 140v10l-8 14a2 2 0 0 0 2 3h20a2 2 0 0 0 2-3l-8-14v-10"/><path class="ac" d="M54 160h16l3 6H51z"/></g>
+              <g class="bob2" style="--c: var(--accent)"><circle class="ac ln" cx="262" cy="50" r="22"/><path class="pa-st" d="M256 44l-6 6 6 6M268 44l6 6-6 6"/></g>
+              <g class="bob" style="--c: var(--gold)"><circle class="ac2 ln" cx="264" cy="164" r="22"/><rect class="ac ln" x="252" y="160" width="24" height="16" rx="2"/><path class="ln" d="M259 160v-3a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></g>
+              <g style="--c: var(--gold)"><path class="ac" transform="translate(40 60) scale(1)" d="M0-6l1.4 3.2 3.2 1.4-3.2 1.4L0 6l-1.4-3.2L-6 1.4l3.2-1.4z"/><path class="ac" transform="translate(300 110) scale(1)" d="M0-6l1.4 3.2 3.2 1.4-3.2 1.4L0 6l-1.4-3.2L-6 1.4l3.2-1.4z"/><path class="ac" transform="translate(170 196) scale(1)" d="M0-6l1.4 3.2 3.2 1.4-3.2 1.4L0 6l-1.4-3.2L-6 1.4l3.2-1.4z"/></g>
+            </svg>
+          </div>
         </div>
       </section>
 
       <section class="section tight">
         <div class="container">
+          <!-- Type tabs: filter by section; counts are filled in by main.js -->
+          <div class="type-tabs" role="group" aria-label="Filter by project type">
+            <button class="type-tab" data-filter-type="all" aria-pressed="true">
+              <span class="type-ic"><svg class="ic"><use href="#i-layers"/></svg></span>
+              <span><b>All work</b><small><span data-type-count="all">0</span> projects</small></span>
+            </button>
+            <button class="type-tab" data-filter-type="research" data-type="research" aria-pressed="false">
+              <span class="type-ic"><svg class="ic"><use href="#i-flask"/></svg></span>
+              <span><b>Research</b><small><span data-type-count="research">0</span> studies &amp; prototypes</small></span>
+            </button>
+            <button class="type-tab" data-filter-type="development" data-type="development" aria-pressed="false">
+              <span class="type-ic"><svg class="ic"><use href="#i-code"/></svg></span>
+              <span><b>Development</b><small><span data-type-count="development">0</span> apps &amp; tools</small></span>
+            </button>
+            <button class="type-tab" data-filter-type="client" data-type="client" aria-pressed="false">
+              <span class="type-ic"><svg class="ic"><use href="#i-briefcase"/></svg></span>
+              <span><b>Client work</b><small><span data-type-count="client">0</span> delivered sites</small></span>
+            </button>
+          </div>
+
           <div class="toolbar">
             <label class="search">
               <svg class="ic"><use href="#i-search"/></svg>
               <input type="search" placeholder="Search projects, tools, or topics…" data-search aria-label="Search projects" />
             </label>
-            <div class="chips-filter" role="group" aria-label="Filter by category">
-              <button class="chip" data-filter="all" aria-pressed="true">All</button>
+            <div class="chips-filter" role="group" aria-label="Filter by topic">
+              <button class="chip" data-filter="all" aria-pressed="true">All topics</button>
               <button class="chip" data-filter="medical" aria-pressed="false">Medical AI</button>
               <button class="chip" data-filter="vision" aria-pressed="false">Computer Vision</button>
               <button class="chip" data-filter="llm" aria-pressed="false">LLMs & NLP</button>
@@ -79,268 +116,427 @@
             <span class="result-count" data-count></span>
           </div>
 
-          <!-- Generated from a data list; to add a project, copy an <article class="project"> block. -->
-          <div class="project-grid" data-filter-list data-noun="projects">
-            <article class="project" data-filter-item data-cat="medical vision llm">
-              <div class="project-media"><div class="cover" data-cat="medical" aria-hidden="true"><svg class="ic"><use href="#i-medical"/></svg></div></div>
-              <div class="project-body">
-                <p class="project-kicker">Medical AI · VLMs · MS thesis</p>
-                <h3>ROI-Guided Lesion Description with Medical VLMs</h3>
-                <p class="project-desc">Multimodal pipeline that generates lesion descriptions from region-of-interest guided medical images. Compares MedFlamingo, MedLLaVA, MedGemma, and Qwen2-VL across full fine-tuning, LoRA, and zero-shot on MedTrinity-25M.</p>
-                <ul class="tags"><li>VLMs</li><li>LoRA</li><li>Qwen2-VL</li><li>MedGemma</li><li>RAGAS</li></ul>
-                <div class="links"><span class="lb lb-muted"><svg class="ic"><use href="#i-lock"/></svg>Private code</span></div>
+          <!-- To add a project, copy an <article class="project"> block into the right group. -->
+          <div data-filter-list data-noun="projects">
+
+            <!-- ───────────── RESEARCH ───────────── -->
+            <div class="project-group" id="research" data-filter-group data-group="research">
+              <div class="group-head">
+                <div>
+                  <p class="group-eyebrow">01 · Research</p>
+                  <h2>Research</h2>
+                  <p>Peer-reviewed studies, benchmarks, and research prototypes. Most come with code, a project page, and a paper.</p>
+                  <p class="group-count"><span data-type-count="research">0</span> projects</p>
+                </div>
+                <svg class="ill" viewBox="0 0 160 120" aria-hidden="true">
+                  <circle class="bg" cx="86" cy="62" r="48"/>
+                  <rect class="pa ln" x="34" y="20" width="56" height="76" rx="5"/>
+                  <path class="ln" d="M44 34h30M44 42h36M44 50h22"/>
+                  <path class="lna" d="M46 86V76M56 86V66M66 86v-6M76 86V70"/>
+                  <path class="ln" d="M42 86h40"/>
+                  <path class="ac" d="M90.2 84h35.6L132 94q2 4-2 4H86q-4 0-2-4z"/>
+                  <path class="ln" d="M100 46v22L84 94q-2 4 2 4h44q4 0 2-4L116 68V46M96 46h24"/>
+                  <circle class="lna" cx="104" cy="77" r="2"/><circle class="lna" cx="111" cy="72" r="1.5"/>
+                  <path class="ln" d="M124 20l16 10M140 30l-8 16M124 20l8 26"/>
+                  <circle class="ac2 ln" cx="124" cy="20" r="4.5"/><circle class="ac ln" cx="140" cy="30" r="4.5"/><circle class="ac2 ln" cx="132" cy="46" r="4.5"/>
+                  <path class="ac" d="M22 52l1.8 4.2 4.2 1.8-4.2 1.8L22 64l-1.8-4.2L16 58l4.2-1.8z"/>
+                  <path class="ac" d="M148 80l1.4 3.2 3.2 1.4-3.2 1.4-1.4 3.2-1.4-3.2-3.2-1.4 3.2-1.4z"/>
+                </svg>
               </div>
-            </article>
-            <article class="project" data-filter-item data-cat="medical vision">
-              <div class="project-media"><img src="./assets/images/projects/wrist-page.jpg" alt="Pediatric Wrist Abnormality Detection preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Medical AI · Detection</p>
-                <h3>Pediatric Wrist Abnormality Detection</h3>
-                <p class="project-desc">YOLOv5–v8 benchmark on GRAZPEDWRI-DX with a deployed web app. YOLOv8 reached 0.95 mAP and 0.92 sensitivity on fractures. Published in Biomedical Signal Processing and Control.</p>
-                <ul class="tags"><li>YOLOv8</li><li>PyTorch</li><li>Hugging Face</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://huggingface.co/spaces/AbdulManafSahito/wrist-anomaly-detection" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a><a class="lb" href="https://abdulmanaf36.github.io/pediatric_wrist_abnormality_detection-end-to-end-implementation/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a><a class="lb" href="https://github.com/abdulmanaf36/Pediatric-Wrist-Abnormality-Detection-System" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a><a class="lb" href="https://doi.org/10.1016/j.bspc.2024.106144" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a></div>
+              <div class="project-grid">
+                <article class="project" data-filter-item data-cat="medical vision llm">
+                  <div class="project-media"><div class="cover" data-cat="medical" aria-hidden="true"><svg class="ic"><use href="#i-medical"/></svg></div><span class="project-year">Ongoing</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Medical AI · VLMs · MS thesis</p>
+                    <h3>ROI-Guided Lesion Description with Medical VLMs</h3>
+                    <p class="project-desc">Multimodal pipeline that generates lesion descriptions from region-of-interest guided medical images. Compares MedFlamingo, MedLLaVA, MedGemma, and Qwen2-VL across full fine-tuning, LoRA, and zero-shot on MedTrinity-25M.</p>
+                    <ul class="tags"><li>VLMs</li><li>LoRA</li><li>Qwen2-VL</li><li>MedGemma</li><li>RAGAS</li></ul>
+                    <div class="links"><span class="lb lb-muted"><svg class="ic"><use href="#i-lock"/></svg>Private code</span></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="llm">
+                  <div class="project-media"><img src="./assets/images/projects/cross-lingual.jpg" alt="Cross-Lingual LLM Sentiment Benchmark preview" loading="lazy" /><span class="project-year">2026</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">LLMs · Benchmarking</p>
+                    <h3>Cross-Lingual LLM Sentiment Benchmark</h3>
+                    <p class="project-desc">Evaluates LLMs for sentiment analysis across many languages through a hierarchical language-family lens. Published in Frontiers in Artificial Intelligence.</p>
+                    <ul class="tags"><li>Multilingual</li><li>LLM evaluation</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://doi.org/10.3389/frai.2026.1854873" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="medical vision">
+                  <div class="project-media"><img src="./assets/images/projects/chest-xray-swin.jpg" alt="Self-Supervised Swin-B for Chest X-rays preview" loading="lazy" /><span class="project-year">2026</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Medical AI · Explainability</p>
+                    <h3>Self-Supervised Swin-B for Chest X-rays</h3>
+                    <p class="project-desc">Multi-label chest X-ray classification with a self-supervised Swin-B transformer, evaluating saliency-map quality alongside accuracy (AUC 0.83). Built at NTNU&#x27;s ISA group.</p>
+                    <ul class="tags"><li>Swin Transformer</li><li>Self-supervised</li><li>Saliency maps</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/Chest-Xray" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a><a class="lb" href="https://ieeexplore.ieee.org/document/11357941" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="llm">
+                  <div class="project-media shot"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>rag-chat-bot-pilot-study.vercel.app</span></div><img src="./assets/images/projects/shots/rag-pilot.jpg" alt="EduRAG pilot study chat interface" loading="lazy" /><span class="project-year">2025</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">LLMs · RAG · User study</p>
+                    <h3>EduRAG Pilot Study</h3>
+                    <p class="project-desc">Live study interface for the EduRAG paper: students ask course questions and compare grounded answers from GPT, Gemini, LLaMA, Mistral, and DeepSeek side by side, rating the most useful one. Under review at Discover AI.</p>
+                    <ul class="tags"><li>RAG</li><li>User study</li><li>LLM evaluation</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://rag-chat-bot-pilot-study.vercel.app/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live study</a><a class="lb" href="https://abdulmanaf36.github.io/Student-Chatbot/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="medical vision">
+                  <div class="project-media"><img src="./assets/images/projects/pneumonia-page.jpg" alt="Pediatric Chest X-ray Pneumonia Detection preview" loading="lazy" /><span class="project-year">2025</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Medical AI · Classification</p>
+                    <h3>Pediatric Chest X-ray Pneumonia Detection</h3>
+                    <p class="project-desc">CNN classifier for pediatric pneumonia that uses GAN-generated samples to balance a small, imbalanced clinical dataset.</p>
+                    <ul class="tags"><li>CNN</li><li>GAN</li><li>Data augmentation</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://huggingface.co/spaces/AbdulManafSahito/Pediatric-Chest-Xray-Pneumonia-Classification-System" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a><a class="lb" href="https://abdulmanaf36.github.io/Pediatric-Chest-Pneumonia-Classification/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a><a class="lb" href="https://github.com/abdulmanaf36/Pediatric-Chest-Pneumonia-Classification" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a><a class="lb" href="https://arxiv.org/abs/2507.09759" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="vision">
+                  <div class="project-media"><img src="./assets/images/projects/post-flood.jpg" alt="Post-Flood Aerial Image Classification preview" loading="lazy" /><span class="project-year">2025</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Computer Vision · XAI</p>
+                    <h3>Post-Flood Aerial Image Classification</h3>
+                    <p class="project-desc">Aerial-image classification for flood response with a curated multi-source dataset. MobileNet and Xception reached about 98% accuracy, with LIME explanations. Published in IEEE Access.</p>
+                    <ul class="tags"><li>CNN</li><li>Transfer learning</li><li>LIME</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://abdulmanaf36.github.io/Post-Flood-Disaster-Management/Classification/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a><a class="lb" href="https://github.com/abdulmanaf36/Post-Flood-Disaster-Management" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a><a class="lb" href="https://ieeexplore.ieee.org/document/10891453" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="llm">
+                  <div class="project-media"><img src="./assets/images/projects/roman-urdu-page.jpg" alt="Roman Urdu Fake Review Detection preview" loading="lazy" /><span class="project-year">2025</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">NLP · Classification</p>
+                    <h3>Roman Urdu Fake Review Detection</h3>
+                    <p class="project-desc">Fake-review detection on e-commerce sites using novel user-behavioural features. Published in ACM TALLIP.</p>
+                    <ul class="tags"><li>NLP</li><li>Feature engineering</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://abdulmanaf36.github.io/Roman-Urdu-fake-review-detection/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a><a class="lb" href="https://github.com/abdulmanaf36/Roman-Urdu-fake-review-detection" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a><a class="lb" href="https://dl.acm.org/doi/10.1145/3748493" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="medical vision">
+                  <div class="project-media"><img src="./assets/images/projects/wrist-page.jpg" alt="Pediatric Wrist Abnormality Detection preview" loading="lazy" /><span class="project-year">2024</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Medical AI · Detection</p>
+                    <h3>Pediatric Wrist Abnormality Detection</h3>
+                    <p class="project-desc">YOLOv5–v8 benchmark on GRAZPEDWRI-DX with a deployed web app. YOLOv8 reached 0.95 mAP and 0.92 sensitivity on fractures. Published in Biomedical Signal Processing and Control.</p>
+                    <ul class="tags"><li>YOLOv8</li><li>PyTorch</li><li>Hugging Face</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://huggingface.co/spaces/AbdulManafSahito/wrist-anomaly-detection" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a><a class="lb" href="https://abdulmanaf36.github.io/pediatric_wrist_abnormality_detection-end-to-end-implementation/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a><a class="lb" href="https://github.com/abdulmanaf36/Pediatric-Wrist-Abnormality-Detection-System" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a><a class="lb" href="https://doi.org/10.1016/j.bspc.2024.106144" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="medical vision">
+                  <div class="project-media"><img src="./assets/images/projects/yolov10-page.jpg" alt="YOLOv10 Wrist Fracture Detection preview" loading="lazy" /><span class="project-year">2024</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Medical AI · Detection</p>
+                    <h3>YOLOv10 Wrist Fracture Detection</h3>
+                    <p class="project-desc">Code for the YOLOv10 study on pediatric wrist fracture detection using a dual label assignment system.</p>
+                    <ul class="tags"><li>YOLOv10</li><li>Object detection</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://abdulmanaf36.github.io/YOLOv10-Fracture-Detection/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a><a class="lb" href="https://github.com/abdulmanaf36/YOLOv10-Fracture-Detection" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a><a class="lb" href="https://arxiv.org/abs/2407.15689" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="vision llm">
+                  <div class="project-media"><img src="./assets/images/projects/captioning.jpg" alt="Image Captioning to Assist the Blind preview" loading="lazy" /></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Computer Vision · Accessibility</p>
+                    <h3>Image Captioning to Assist the Blind</h3>
+                    <p class="project-desc">Generates captions for images and reads them aloud to help visually impaired users understand their surroundings.</p>
+                    <ul class="tags"><li>Image captioning</li><li>Text-to-speech</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/image-captioning-system-to-assist-the-blind" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="vision">
+                  <div class="project-media"><img src="./assets/images/projects/lora-sd.jpg" alt="LoRA Fine-tuning of Stable Diffusion preview" loading="lazy" /></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Generative AI · Diffusion</p>
+                    <h3>LoRA Fine-tuning of Stable Diffusion</h3>
+                    <p class="project-desc">Fine-tuned Stable Diffusion with LoRA to generate portraits in the style of the Kalash Valley.</p>
+                    <ul class="tags"><li>Stable Diffusion</li><li>LoRA</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/Finetuning-with-LoRA-for-Stable-Diffusion-Kalash-Valley-Portraits" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="llm">
+                  <div class="project-media"><img src="./assets/images/projects/hate-speech.png" alt="Hate Speech Detection with XAI preview" class="fit" loading="lazy" /></div>
+                  <div class="project-body">
+                    <p class="project-kicker">NLP · Explainability</p>
+                    <h3>Hate Speech Detection with XAI</h3>
+                    <p class="project-desc">Coarse- and fine-grained hate speech classification, with LIME explanations of model predictions.</p>
+                    <ul class="tags"><li>NLP</li><li>LIME</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/Hate-Speech-Detection" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="llm medical">
+                  <div class="project-media"><div class="cover" data-cat="llm" aria-hidden="true"><svg class="ic"><use href="#i-llm"/></svg></div></div>
+                  <div class="project-body">
+                    <p class="project-kicker">NLP · Mental health</p>
+                    <h3>Social Media Depression Detection</h3>
+                    <p class="project-desc">Deep learning models for detecting signs of depression in social media text.</p>
+                    <ul class="tags"><li>Deep learning</li><li>Text classification</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/From-Text-to-Diagnosis-Deep-Learning-Models-for-Social-Media-Depression-Detection" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="llm">
+                  <div class="project-media"><img src="./assets/images/projects/absa.png" alt="Aspect-Based Sentiment Analysis preview" class="fit" loading="lazy" /></div>
+                  <div class="project-body">
+                    <p class="project-kicker">NLP · Sentiment</p>
+                    <h3>Aspect-Based Sentiment Analysis</h3>
+                    <p class="project-desc">Comparative analysis of models for aspect-based sentiment analysis (ABSA).</p>
+                    <ul class="tags"><li>ABSA</li><li>Transformers</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/Comparative-Analysis-for-Aspect-Based-Sentiment-Analysis-ABSA-" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+                  </div>
+                </article>
               </div>
-            </article>
-            <article class="project" data-filter-item data-cat="medical vision">
-              <div class="project-media"><img src="./assets/images/projects/pneumonia-page.jpg" alt="Pediatric Chest X-ray Pneumonia Detection preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Medical AI · Classification</p>
-                <h3>Pediatric Chest X-ray Pneumonia Detection</h3>
-                <p class="project-desc">CNN classifier for pediatric pneumonia that uses GAN-generated samples to balance a small, imbalanced clinical dataset.</p>
-                <ul class="tags"><li>CNN</li><li>GAN</li><li>Data augmentation</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://huggingface.co/spaces/AbdulManafSahito/Pediatric-Chest-Xray-Pneumonia-Classification-System" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a><a class="lb" href="https://abdulmanaf36.github.io/Pediatric-Chest-Pneumonia-Classification/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a><a class="lb" href="https://github.com/abdulmanaf36/Pediatric-Chest-Pneumonia-Classification" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a><a class="lb" href="https://arxiv.org/abs/2507.09759" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a></div>
+            </div>
+
+            <!-- ───────────── DEVELOPMENT ───────────── -->
+            <div class="project-group" id="development" data-filter-group data-group="development">
+              <div class="group-head">
+                <div>
+                  <p class="group-eyebrow">02 · Development</p>
+                  <h2>Development</h2>
+                  <p>Products and tools I designed and built end to end, from AI-powered apps to full-stack web platforms.</p>
+                  <p class="group-count"><span data-type-count="development">0</span> projects</p>
+                </div>
+                <svg class="ill" viewBox="0 0 160 120" aria-hidden="true">
+                  <circle class="bg" cx="80" cy="60" r="48"/>
+                  <rect class="pa ln" x="22" y="22" width="96" height="66" rx="6"/>
+                  <path class="ln" d="M22 34h96"/>
+                  <circle class="ac" cx="30" cy="28" r="1.8"/><circle class="ac2" cx="37" cy="28" r="1.8"/><circle class="ac2" cx="44" cy="28" r="1.8"/>
+                  <path class="lna" d="M46 50l-9 9 9 9M74 50l9 9-9 9M65 46l-10 26"/>
+                  <path class="ln" d="M92 50h16M92 58h10M92 66h14"/>
+                  <rect class="pa ln" x="110" y="46" width="32" height="54" rx="6"/>
+                  <rect class="ac2" x="117" y="56" width="18" height="14" rx="2"/>
+                  <path class="ln" d="M117 78h18M117 85h11M122 94h8"/>
+                  <circle class="ln" cx="34" cy="100" r="8" stroke-width="5" stroke-dasharray="3.4 3"/>
+                  <circle class="pa ln" cx="34" cy="100" r="4"/>
+                  <path class="ac" d="M146 22l1.8 4.2 4.2 1.8-4.2 1.8L146 34l-1.8-4.2L140 28l4.2-1.8z"/>
+                  <path class="ac" d="M60 98l1.4 3.2 3.2 1.4-3.2 1.4-1.4 3.2-1.4-3.2-3.2-1.4 3.2-1.4z"/>
+                </svg>
               </div>
-            </article>
-            <article class="project" data-filter-item data-cat="medical vision">
-              <div class="project-media"><img src="./assets/images/projects/chest-xray-swin.jpg" alt="Self-Supervised Swin-B for Chest X-rays preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Medical AI · Explainability</p>
-                <h3>Self-Supervised Swin-B for Chest X-rays</h3>
-                <p class="project-desc">Multi-label chest X-ray classification with a self-supervised Swin-B transformer, evaluating saliency-map quality alongside accuracy (AUC 0.83). Built at NTNU&#x27;s ISA group.</p>
-                <ul class="tags"><li>Swin Transformer</li><li>Self-supervised</li><li>Saliency maps</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/Chest-Xray" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a><a class="lb" href="https://ieeexplore.ieee.org/document/11357941" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a></div>
+              <div class="project-grid">
+                <article class="project" data-filter-item data-cat="web">
+                  <div class="project-media shot"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>wulmy.vercel.app</span></div><img src="./assets/images/projects/shots/wulmy.jpg" alt="Wulmy homepage" loading="lazy" /><span class="project-year">2026</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Full-stack · EdTech</p>
+                    <h3>Wulmy</h3>
+                    <p class="project-desc">Study-abroad platform for English-taught medicine, dentistry, and pharmacy in Italy: eligibility checks, pathway plans, and booked consultations covering IMAT, Universitaly, visa, and enrolment.</p>
+                    <ul class="tags"><li>Web platform</li><li>Eligibility checker</li><li>Booking</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://wulmy.vercel.app/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-external"/></svg>Visit site</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="llm web">
+                  <div class="project-media shot"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>edurag-chatbot.vercel.app</span></div><img src="./assets/images/projects/shots/edurag-chatbot.jpg" alt="EduRAG homepage" loading="lazy" /><span class="project-year">2025–26</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">LLMs · RAG · Platform</p>
+                    <h3>EduRAG</h3>
+                    <p class="project-desc">Course-aware student support that answers questions with retrieval-augmented generation, grounded in each course's lecture slides, notes, and textbooks. Extended and deployed on AWS at NTNU.</p>
+                    <ul class="tags"><li>RAG</li><li>Multi-LLM</li><li>AWS</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://edurag-chatbot.vercel.app" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a><a class="lb" href="https://abdulmanaf36.github.io/Student-Chatbot/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="llm web">
+                  <div class="project-media shot"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>edu-scan-assist.vercel.app</span></div><img src="./assets/images/projects/shots/edu-scan.jpg" alt="CortexTest homepage" loading="lazy" /><span class="project-year">2025</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">LLMs · EdTech</p>
+                    <h3>CortexTest: LLM Assessment Platform</h3>
+                    <p class="project-desc">Exam-assessment platform that combines OCR and LLM analysis to grade answers and produce detailed feedback.</p>
+                    <ul class="tags"><li>OCR</li><li>LLMs</li><li>React</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://edu-scan-assist.vercel.app/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="vision llm">
+                  <div class="project-media shot"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>ai-vision-ocr.vercel.app</span></div><img src="./assets/images/projects/shots/vision-ocr.jpg" alt="Vision OCR app" loading="lazy" /><span class="project-year">2025</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Computer Vision · Multimodal</p>
+                    <h3>Vision OCR</h3>
+                    <p class="project-desc">General OCR and image-understanding web app: upload an image, write a prompt, and get structured output from Gemini or GPT vision models.</p>
+                    <ul class="tags"><li>Gemini</li><li>GPT-4 Vision</li><li>React</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://ai-vision-ocr.vercel.app/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a><a class="lb" href="https://github.com/abdulmanaf36/Vision-OCR" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="agentic web">
+                  <div class="project-media shot"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>prompt-flow-studio.vercel.app</span></div><img src="./assets/images/projects/shots/promptflow.jpg" alt="PromptFlow Studio app" loading="lazy" /><span class="project-year">2025</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Developer tool · Prompting</p>
+                    <h3>PromptFlow Studio</h3>
+                    <p class="project-desc">Workspace for building structured AI prompts: projects, conversation threads, and export to JSON, Markdown, or LaTeX.</p>
+                    <ul class="tags"><li>React</li><li>Prompt engineering</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://prompt-flow-studio.vercel.app/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="web">
+                  <div class="project-media shot"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>bank-nu-three.vercel.app</span></div><img src="./assets/images/projects/shots/bank.jpg" alt="Premier Bank homepage" loading="lazy" /><span class="project-year">2025</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Full-stack · Fintech</p>
+                    <h3>Premier Bank</h3>
+                    <p class="project-desc">Digital banking web app with account sign-up, instant transfers, real-time notifications, and an optional Sharia-compliant transaction mode.</p>
+                    <ul class="tags"><li>Authentication</li><li>Transfers</li><li>Dashboard</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://bank-nu-three.vercel.app/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="web">
+                  <div class="project-media shot"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>uniadminx.vercel.app</span></div><img src="./assets/images/projects/shots/uniadminx.jpg" alt="UniAdminX landing page and dashboard" loading="lazy" /><span class="project-year">2025</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Full-stack · Dashboard</p>
+                    <h3>UniAdminX</h3>
+                    <p class="project-desc">Admin dashboard and landing-page kit built on shadcn/ui, with revenue, customer, and account analytics and light and dark themes.</p>
+                    <ul class="tags"><li>shadcn/ui</li><li>React</li><li>Tailwind CSS</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://uniadminx.vercel.app/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="web">
+                  <div class="project-media shot"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>qr-code-generator-rho-drab.vercel.app</span></div><img src="./assets/images/projects/shots/qr-generator.jpg" alt="QR Code Generator app" loading="lazy" /><span class="project-year">2025</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Web · Utility</p>
+                    <h3>QR Code Generator</h3>
+                    <p class="project-desc">Paste any link and get a downloadable QR code instantly. Codes are generated in memory and never stored.</p>
+                    <ul class="tags"><li>Utility</li><li>Client-side</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://qr-code-generator-rho-drab.vercel.app/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="web agentic">
+                  <div class="project-media"><div class="cover" data-cat="web" aria-hidden="true"><svg class="ic"><use href="#i-web"/></svg></div></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Full-stack · Government</p>
+                    <h3>Sindh Government AI Platform</h3>
+                    <p class="project-desc">AI complaint-similarity service on AWS, n8n email automation for candidate queries, and the DEPD disability-services prototype backed by PostgreSQL.</p>
+                    <ul class="tags"><li>AWS</li><li>PostgreSQL</li><li>n8n</li><li>Node.js</li></ul>
+                    <div class="links"><span class="lb lb-muted"><svg class="ic"><use href="#i-lock"/></svg>Private code</span></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="agentic llm">
+                  <div class="project-media"><img src="./assets/images/projects/finance-agent.jpg" alt="AI Finance Agent Team preview" loading="lazy" /></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Agentic AI · Finance</p>
+                    <h3>AI Finance Agent Team</h3>
+                    <p class="project-desc">Multi-agent system that combines specialised agents for market analysis and investment research.</p>
+                    <ul class="tags"><li>Multi-agent</li><li>GPT-4</li><li>Tool use</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/AI-Finance-Agent-Team" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="agentic llm">
+                  <div class="project-media"><img src="./assets/images/projects/research-agent.jpg" alt="AI Research Agent preview" loading="lazy" /></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Agentic AI · Research</p>
+                    <h3>AI Research Agent</h3>
+                    <p class="project-desc">Research assistant that plans multi-step searches and writes structured reports from web sources.</p>
+                    <ul class="tags"><li>Agents</li><li>Web search</li><li>GPT-4</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/AI-Research-Agent" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="agentic llm">
+                  <div class="project-media"><div class="cover" data-cat="agentic" aria-hidden="true"><svg class="ic"><use href="#i-agentic"/></svg></div></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Agentic AI · Content</p>
+                    <h3>LinkedInCraft Post Generator</h3>
+                    <p class="project-desc">Web app that turns any topic into a polished LinkedIn post with LLMs.</p>
+                    <ul class="tags"><li>LLMs</li><li>Python</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/LinkedInCraft-AI-Powered-LinkedIn-Post-Generator" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="medical llm">
+                  <div class="project-media"><img src="./assets/images/projects/healthiconiq.png" alt="HealthIconIQ preview" class="fit" loading="lazy" /></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Medical AI · Mobile</p>
+                    <h3>HealthIconIQ</h3>
+                    <p class="project-desc">Mobile health app that uses ChatGPT to interpret medical symbols and make healthcare information easier to understand.</p>
+                    <ul class="tags"><li>ChatGPT API</li><li>Mobile</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/HealthIconIQ" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="web">
+                  <div class="project-media"><img src="./assets/images/projects/pdf-merge.jpg" alt="PDF Merge preview" loading="lazy" /></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Web · Utility</p>
+                    <h3>PDF Merge</h3>
+                    <p class="project-desc">Lightweight browser tool to merge PDF files without uploading them anywhere.</p>
+                    <ul class="tags"><li>JavaScript</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://abdulmanaf36.github.io/PDF-merge/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-external"/></svg>Visit site</a><a class="lb" href="https://github.com/abdulmanaf36/PDF-merge" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+                  </div>
+                </article>
               </div>
-            </article>
-            <article class="project" data-filter-item data-cat="medical vision">
-              <div class="project-media"><img src="./assets/images/projects/yolov10-page.jpg" alt="YOLOv10 Wrist Fracture Detection preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Medical AI · Detection</p>
-                <h3>YOLOv10 Wrist Fracture Detection</h3>
-                <p class="project-desc">Code for the YOLOv10 study on pediatric wrist fracture detection using a dual label assignment system.</p>
-                <ul class="tags"><li>YOLOv10</li><li>Object detection</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://abdulmanaf36.github.io/YOLOv10-Fracture-Detection/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a><a class="lb" href="https://github.com/abdulmanaf36/YOLOv10-Fracture-Detection" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a><a class="lb" href="https://arxiv.org/abs/2407.15689" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a></div>
+            </div>
+
+            <!-- ───────────── CLIENT WORK ───────────── -->
+            <div class="project-group" id="client" data-filter-group data-group="client">
+              <div class="group-head">
+                <div>
+                  <p class="group-eyebrow">03 · Client work</p>
+                  <h2>Client work</h2>
+                  <p>Websites designed and delivered for businesses, artists, research labs, and university events.</p>
+                  <p class="group-count"><span data-type-count="client">0</span> projects</p>
+                </div>
+                <svg class="ill" viewBox="0 0 160 120" aria-hidden="true">
+                  <circle class="bg" cx="80" cy="60" r="48"/>
+                  <rect class="pa ln" x="20" y="20" width="104" height="72" rx="6"/>
+                  <path class="ln" d="M20 32h104"/>
+                  <circle class="ac" cx="28" cy="26" r="1.8"/><circle class="ac2" cx="35" cy="26" r="1.8"/><circle class="ac2" cx="42" cy="26" r="1.8"/>
+                  <rect class="ac" x="30" y="44" width="38" height="7" rx="2"/>
+                  <path class="ln" d="M30 59h30M30 66h24"/>
+                  <rect class="ac2" x="30" y="74" width="20" height="8" rx="4"/>
+                  <rect class="bg ln" x="78" y="42" width="36" height="40" rx="4"/>
+                  <path class="lna" d="M80 78l10-12 7 8 5-5 10 9"/>
+                  <circle class="ac" cx="104" cy="52" r="3"/>
+                  <circle class="pa ln" cx="128" cy="88" r="17"/>
+                  <path class="ac ln" d="M128 78l3 6.6 7 .7-5.2 4.7 1.4 7-6.2-3.5-6.2 3.5 1.4-7-5.2-4.7 7-.7z"/>
+                  <path class="pa ln" d="M62 86l7 20 3.5-8 8-3.5z"/>
+                  <path class="ac" d="M146 22l1.8 4.2 4.2 1.8-4.2 1.8L146 34l-1.8-4.2L140 28l4.2-1.8z"/>
+                  <path class="ac" d="M14 98l1.4 3.2 3.2 1.4-3.2 1.4-1.4 3.2-1.4-3.2-3.2-1.4 3.2-1.4z"/>
+                </svg>
               </div>
-            </article>
-            <article class="project" data-filter-item data-cat="medical llm">
-              <div class="project-media"><img src="./assets/images/projects/healthiconiq.png" alt="HealthIconIQ preview" class="fit" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Medical AI · Mobile</p>
-                <h3>HealthIconIQ</h3>
-                <p class="project-desc">Mobile health app that uses ChatGPT to interpret medical symbols and make healthcare information easier to understand.</p>
-                <ul class="tags"><li>ChatGPT API</li><li>Mobile</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/HealthIconIQ" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+              <div class="project-grid">
+                <article class="project" data-filter-item data-cat="web">
+                  <div class="project-media shot"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>eco-fibra.vercel.app</span></div><img src="./assets/images/projects/shots/eco-fibra.jpg" alt="EcoFibra homepage" loading="lazy" /><span class="project-year">2026</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Client · Textiles · Italy</p>
+                    <h3>EcoFibra</h3>
+                    <p class="project-desc">Website for a textile sourcing firm in Biella, Italy: a catalogue of recycled and sustainable fibres, services, a live commodity-market ticker, and quote requests.</p>
+                    <ul class="tags"><li>Product catalogue</li><li>Quote requests</li><li>Market data</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://eco-fibra.vercel.app/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-external"/></svg>Visit site</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="web">
+                  <div class="project-media shot"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>golden-qalam.vercel.app</span></div><img src="./assets/images/projects/shots/golden-qalam.jpg" alt="Golden Qalam homepage" loading="lazy" /></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Client · Art &amp; calligraphy</p>
+                    <h3>Golden Qalam</h3>
+                    <p class="project-desc">Portfolio and commissions site for hand-painted gold-leaf calligraphy, from first sketch or AI-assisted concept to finished canvas.</p>
+                    <ul class="tags"><li>Portfolio</li><li>Commissions</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://golden-qalam.vercel.app/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-external"/></svg>Visit site</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="web">
+                  <div class="project-media shot"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>craib-iba-suk-edu-pk.vercel.app</span></div><img src="./assets/images/projects/shots/craib.jpg" alt="CRAIB Lab website" loading="lazy" /><span class="project-year">2024</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Client · Research lab</p>
+                    <h3>CRAIB Lab Website</h3>
+                    <p class="project-desc">Website for the Center of Excellence for Robotics, AI &amp; Blockchain at Sukkur IBA University.</p>
+                    <ul class="tags"><li>React</li><li>Vercel</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://craib-iba-suk-edu-pk.vercel.app" target="_blank" rel="noopener"><svg class="ic"><use href="#i-external"/></svg>Visit site</a><a class="lb" href="https://github.com/abdulmanaf36/craib-iba-suk.edu.pk" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="web">
+                  <div class="project-media shot"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>sensor-kit.vercel.app</span></div><img src="./assets/images/projects/shots/sensor-kit.jpg" alt="SensorKit website" loading="lazy" /><span class="project-year">2024</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Client · Robotics</p>
+                    <h3>SensorKit</h3>
+                    <p class="project-desc">Product site for the Arduino Sensor Trainer Kit developed at Sukkur IBA University.</p>
+                    <ul class="tags"><li>Web</li><li>Arduino</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://sensor-kit.vercel.app" target="_blank" rel="noopener"><svg class="ic"><use href="#i-external"/></svg>Visit site</a><a class="lb" href="https://github.com/abdulmanaf36/SensorKit-website" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+                  </div>
+                </article>
+                <article class="project" data-filter-item data-cat="web">
+                  <div class="project-media shot"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>crw-webpage.vercel.app</span></div><img src="./assets/images/projects/shots/cwc.jpg" alt="National Case Writing Competition website" loading="lazy" /><span class="project-year">2024</span></div>
+                  <div class="project-body">
+                    <p class="project-kicker">Client · Event</p>
+                    <h3>National Case Writing Competition Site</h3>
+                    <p class="project-desc">Event website for the 1st National Case Writing Competition (CWC 2024) at Sukkur IBA University.</p>
+                    <ul class="tags"><li>Web</li><li>Vercel</li></ul>
+                    <div class="links"><a class="lb lb-primary" href="https://crw-webpage.vercel.app" target="_blank" rel="noopener"><svg class="ic"><use href="#i-external"/></svg>Visit site</a><a class="lb" href="https://github.com/abdulmanaf36/cwc.iba-suk.edu.pk" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
+                  </div>
+                </article>
               </div>
-            </article>
-            <article class="project" data-filter-item data-cat="vision">
-              <div class="project-media"><img src="./assets/images/projects/post-flood.jpg" alt="Post-Flood Aerial Image Classification preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Computer Vision · XAI</p>
-                <h3>Post-Flood Aerial Image Classification</h3>
-                <p class="project-desc">Aerial-image classification for flood response with a curated multi-source dataset. MobileNet and Xception reached about 98% accuracy, with LIME explanations. Published in IEEE Access.</p>
-                <ul class="tags"><li>CNN</li><li>Transfer learning</li><li>LIME</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://abdulmanaf36.github.io/Post-Flood-Disaster-Management/Classification/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a><a class="lb" href="https://github.com/abdulmanaf36/Post-Flood-Disaster-Management" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a><a class="lb" href="https://ieeexplore.ieee.org/document/10891453" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="vision llm">
-              <div class="project-media"><img src="./assets/images/projects/vision-ocr.jpg" alt="Vision OCR preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Computer Vision · Multimodal</p>
-                <h3>Vision OCR</h3>
-                <p class="project-desc">General OCR and image-understanding web app: upload an image, write a prompt, and get structured output from Gemini or GPT vision models.</p>
-                <ul class="tags"><li>Gemini</li><li>GPT-4 Vision</li><li>React</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://ai-vision-ocr.vercel.app/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a><a class="lb" href="https://github.com/abdulmanaf36/Vision-OCR" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="vision llm">
-              <div class="project-media"><img src="./assets/images/projects/captioning.jpg" alt="Image Captioning to Assist the Blind preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Computer Vision · Accessibility</p>
-                <h3>Image Captioning to Assist the Blind</h3>
-                <p class="project-desc">Generates captions for images and reads them aloud to help visually impaired users understand their surroundings.</p>
-                <ul class="tags"><li>Image captioning</li><li>Text-to-speech</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/image-captioning-system-to-assist-the-blind" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="vision">
-              <div class="project-media"><img src="./assets/images/projects/lora-sd.jpg" alt="LoRA Fine-tuning of Stable Diffusion preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Generative AI · Diffusion</p>
-                <h3>LoRA Fine-tuning of Stable Diffusion</h3>
-                <p class="project-desc">Fine-tuned Stable Diffusion with LoRA to generate portraits in the style of the Kalash Valley.</p>
-                <ul class="tags"><li>Stable Diffusion</li><li>LoRA</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/Finetuning-with-LoRA-for-Stable-Diffusion-Kalash-Valley-Portraits" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="llm">
-              <div class="project-media"><img src="./assets/images/projects/student-chatbot-page.jpg" alt="EduRAG preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">LLMs · RAG</p>
-                <h3>EduRAG</h3>
-                <p class="project-desc">Course-specific RAG framework benchmarking GPT, Gemini, LLaMA, Mistral, and DeepSeek across three university courses. Now extended and deployed on AWS at NTNU. Under review at Discover AI.</p>
-                <ul class="tags"><li>RAG</li><li>LLM evaluation</li><li>AWS</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://edurag-chatbot.vercel.app" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a><a class="lb" href="https://abdulmanaf36.github.io/Student-Chatbot/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="llm">
-              <div class="project-media"><img src="./assets/images/projects/cross-lingual.jpg" alt="Cross-Lingual LLM Sentiment Benchmark preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">LLMs · Benchmarking</p>
-                <h3>Cross-Lingual LLM Sentiment Benchmark</h3>
-                <p class="project-desc">Evaluates LLMs for sentiment analysis across many languages through a hierarchical language-family lens. Published in Frontiers in Artificial Intelligence.</p>
-                <ul class="tags"><li>Multilingual</li><li>LLM evaluation</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://doi.org/10.3389/frai.2026.1854873" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="llm web">
-              <div class="project-media"><img src="./assets/images/projects/cortextest.jpg" alt="CortexTest: LLM Assessment Platform preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">LLMs · EdTech</p>
-                <h3>CortexTest: LLM Assessment Platform</h3>
-                <p class="project-desc">Exam-assessment platform that combines OCR and LLM analysis to grade answers and produce detailed feedback.</p>
-                <ul class="tags"><li>OCR</li><li>LLMs</li><li>React</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://edu-scan-assist.vercel.app/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="llm">
-              <div class="project-media"><img src="./assets/images/projects/roman-urdu-page.jpg" alt="Roman Urdu Fake Review Detection preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">NLP · Classification</p>
-                <h3>Roman Urdu Fake Review Detection</h3>
-                <p class="project-desc">Fake-review detection on e-commerce sites using novel user-behavioural features. Published in ACM TALLIP.</p>
-                <ul class="tags"><li>NLP</li><li>Feature engineering</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://abdulmanaf36.github.io/Roman-Urdu-fake-review-detection/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-globe"/></svg>Project page</a><a class="lb" href="https://github.com/abdulmanaf36/Roman-Urdu-fake-review-detection" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a><a class="lb" href="https://dl.acm.org/doi/10.1145/3748493" target="_blank" rel="noopener"><svg class="ic"><use href="#i-paper"/></svg>Paper</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="llm">
-              <div class="project-media"><img src="./assets/images/projects/hate-speech.png" alt="Hate Speech Detection with XAI preview" class="fit" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">NLP · Explainability</p>
-                <h3>Hate Speech Detection with XAI</h3>
-                <p class="project-desc">Coarse- and fine-grained hate speech classification, with LIME explanations of model predictions.</p>
-                <ul class="tags"><li>NLP</li><li>LIME</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/Hate-Speech-Detection" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="llm medical">
-              <div class="project-media"><div class="cover" data-cat="llm" aria-hidden="true"><svg class="ic"><use href="#i-llm"/></svg></div></div>
-              <div class="project-body">
-                <p class="project-kicker">NLP · Mental health</p>
-                <h3>Social Media Depression Detection</h3>
-                <p class="project-desc">Deep learning models for detecting signs of depression in social media text.</p>
-                <ul class="tags"><li>Deep learning</li><li>Text classification</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/From-Text-to-Diagnosis-Deep-Learning-Models-for-Social-Media-Depression-Detection" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="llm">
-              <div class="project-media"><img src="./assets/images/projects/absa.png" alt="Aspect-Based Sentiment Analysis preview" class="fit" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">NLP · Sentiment</p>
-                <h3>Aspect-Based Sentiment Analysis</h3>
-                <p class="project-desc">Comparative analysis of models for aspect-based sentiment analysis (ABSA).</p>
-                <ul class="tags"><li>ABSA</li><li>Transformers</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/Comparative-Analysis-for-Aspect-Based-Sentiment-Analysis-ABSA-" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="agentic llm">
-              <div class="project-media"><img src="./assets/images/projects/finance-agent.jpg" alt="AI Finance Agent Team preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Agentic AI · Finance</p>
-                <h3>AI Finance Agent Team</h3>
-                <p class="project-desc">Multi-agent system that combines specialised agents for market analysis and investment research.</p>
-                <ul class="tags"><li>Multi-agent</li><li>GPT-4</li><li>Tool use</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/AI-Finance-Agent-Team" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="agentic llm">
-              <div class="project-media"><img src="./assets/images/projects/research-agent.jpg" alt="AI Research Agent preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Agentic AI · Research</p>
-                <h3>AI Research Agent</h3>
-                <p class="project-desc">Research assistant that plans multi-step searches and writes structured reports from web sources.</p>
-                <ul class="tags"><li>Agents</li><li>Web search</li><li>GPT-4</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/AI-Research-Agent" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="agentic llm">
-              <div class="project-media"><div class="cover" data-cat="agentic" aria-hidden="true"><svg class="ic"><use href="#i-agentic"/></svg></div></div>
-              <div class="project-body">
-                <p class="project-kicker">Agentic AI · Content</p>
-                <h3>LinkedInCraft Post Generator</h3>
-                <p class="project-desc">Web app that turns any topic into a polished LinkedIn post with LLMs.</p>
-                <ul class="tags"><li>LLMs</li><li>Python</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://github.com/abdulmanaf36/LinkedInCraft-AI-Powered-LinkedIn-Post-Generator" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="agentic web">
-              <div class="project-media"><img src="./assets/images/projects/promptflow.jpg" alt="PromptFlow Studio preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Developer tool · Prompting</p>
-                <h3>PromptFlow Studio</h3>
-                <p class="project-desc">Workspace for building structured AI prompts: projects, conversation threads, and export to JSON, Markdown, or LaTeX.</p>
-                <ul class="tags"><li>React</li><li>Prompt engineering</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://prompt-flow-studio.vercel.app/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-demo"/></svg>Live demo</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="web agentic">
-              <div class="project-media"><div class="cover" data-cat="web" aria-hidden="true"><svg class="ic"><use href="#i-web"/></svg></div></div>
-              <div class="project-body">
-                <p class="project-kicker">Full-stack · Government</p>
-                <h3>Sindh Government AI Platform</h3>
-                <p class="project-desc">AI complaint-similarity service on AWS, n8n email automation for candidate queries, and the DEPD disability-services prototype backed by PostgreSQL.</p>
-                <ul class="tags"><li>AWS</li><li>PostgreSQL</li><li>n8n</li><li>Node.js</li></ul>
-                <div class="links"><span class="lb lb-muted"><svg class="ic"><use href="#i-lock"/></svg>Private code</span></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="web">
-              <div class="project-media"><img src="./assets/images/projects/craib-web.jpg" alt="CRAIB Lab Website preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Web · Research lab</p>
-                <h3>CRAIB Lab Website</h3>
-                <p class="project-desc">Website for the Center of Excellence for Robotics, AI &amp; Blockchain at Sukkur IBA University.</p>
-                <ul class="tags"><li>React</li><li>Vercel</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://craib-iba-suk-edu-pk.vercel.app" target="_blank" rel="noopener"><svg class="ic"><use href="#i-external"/></svg>Visit site</a><a class="lb" href="https://github.com/abdulmanaf36/craib-iba-suk.edu.pk" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="web">
-              <div class="project-media"><img src="./assets/images/projects/cwc-web.jpg" alt="National Case Writing Competition Site preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Web · Event</p>
-                <h3>National Case Writing Competition Site</h3>
-                <p class="project-desc">Event website for the 1st National Case Writing Competition (CWC 2024) at Sukkur IBA University.</p>
-                <ul class="tags"><li>Web</li><li>Vercel</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://crw-webpage.vercel.app" target="_blank" rel="noopener"><svg class="ic"><use href="#i-external"/></svg>Visit site</a><a class="lb" href="https://github.com/abdulmanaf36/cwc.iba-suk.edu.pk" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="web">
-              <div class="project-media"><img src="./assets/images/projects/sensorkit.jpg" alt="SensorKit preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Web · Robotics</p>
-                <h3>SensorKit</h3>
-                <p class="project-desc">Product site for the Arduino Sensor Trainer Kit developed at Sukkur IBA University.</p>
-                <ul class="tags"><li>Web</li><li>Arduino</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://sensor-kit.vercel.app" target="_blank" rel="noopener"><svg class="ic"><use href="#i-external"/></svg>Visit site</a><a class="lb" href="https://github.com/abdulmanaf36/SensorKit-website" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
-              </div>
-            </article>
-            <article class="project" data-filter-item data-cat="web">
-              <div class="project-media"><img src="./assets/images/projects/pdf-merge.jpg" alt="PDF Merge preview" loading="lazy" /></div>
-              <div class="project-body">
-                <p class="project-kicker">Web · Utility</p>
-                <h3>PDF Merge</h3>
-                <p class="project-desc">Lightweight browser tool to merge PDF files without uploading them anywhere.</p>
-                <ul class="tags"><li>JavaScript</li></ul>
-                <div class="links"><a class="lb lb-primary" href="https://abdulmanaf36.github.io/PDF-merge/" target="_blank" rel="noopener"><svg class="ic"><use href="#i-external"/></svg>Visit site</a><a class="lb" href="https://github.com/abdulmanaf36/PDF-merge" target="_blank" rel="noopener"><svg class="ic"><use href="#i-github"/></svg>Code</a></div>
-              </div>
-            </article>
+            </div>
+
           </div>
           <p class="empty" data-empty>No projects match your search. Try another keyword or category.</p>
         </div>
